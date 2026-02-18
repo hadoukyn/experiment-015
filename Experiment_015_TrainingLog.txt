@@ -1,0 +1,2904 @@
+
+================================================================================
+LOGGING INITIALIZED: Final-Train-Test
+Log file: logs\Final-Train-Test_20260217_210934.txt
+Timestamp: 20260217_210934
+================================================================================
+
+
+================================================================================
+PHASE C: FINAL TRAIN & TEST
+================================================================================
+Using observed steps/day: 1227.8 (from burn-in)
+Reward function hash: 09f8bc66
+Mechanics hash (EXP-014): bea1c04b
+Evaluation mode: argmax
+EXPERIMENT-015 config:
+  MAX_TRADES_PER_DAY=10
+  BUDGET_LAMBDA=0.0
+  MIN_TRADES_TARGET=5
+  UNUSED_LAMBDA=0.2
+  EXECUTION_PENALTY_R=0.02
+  ACTION_PENALTY_R=0.01
+  STOPLOSS_EVENT_PENALTY_R=0.05
+  REVERSAL_EVENT_PENALTY_R=0.03
+  STOPLOSS_COOLDOWN_THRESHOLD=4
+  RESERVED_ENTRIES_LONDON=3
+  RESERVED_ENTRIES_NY=4
+  STOPLOSS_SOFT_GATE_THRESHOLD=2
+  ATR_MULTIPLIER=3.0
+  MANUAL_EXIT_AT_OPEN=True
+  INACTIVITY_BASELINE_REWARD=0.00025
+  PATIENCE_REWARD=0.004
+  MIN_HOLD_BARS=15 (now enforced on reversals)
+  QR-DQN: n_quantiles=51, risk_fraction=0.25, cql_enabled=False
+Epsilon Decay Calculation:
+  Training days: 1035
+  Observed steps/day: 1227.8
+  Expected total steps: 1,270,732
+  Coverage ratio: 0.85
+  Decay steps: 1,080,121 (epsilon reaches min at 85% of training)
+
+--- Final Training: 2021-01-04 -> 2024-12-31 ---
+Training days: 1035
+Feature phase: 4 (all features)
+[100/1035] Date: 2021-05-21, PnL: $75.70, ε: 0.7413, env_steps: 124,201, update_steps: 31,066
+  Checkpoint saved: models\final_checkpoint_day100_2021-05-21.pt
+[200/1035] Date: 2021-10-08, PnL: $-97.72, ε: 0.4790, env_steps: 250,116, update_steps: 62,590
+  Checkpoint saved: models\final_checkpoint_day200_2021-10-08.pt
+[300/1035] Date: 2022-02-28, PnL: $99.77, ε: 0.2214, env_steps: 373,788, update_steps: 93,535
+  Checkpoint saved: models\final_checkpoint_day300_2022-02-28.pt
+[400/1035] Date: 2022-07-19, PnL: $73.09, ε: 0.0834, env_steps: 499,473, update_steps: 124,999
+  Checkpoint saved: models\final_checkpoint_day400_2022-07-19.pt
+[500/1035] Date: 2022-12-06, PnL: $33.11, ε: 0.0524, env_steps: 624,817, update_steps: 156,374
+  Checkpoint saved: models\final_checkpoint_day500_2022-12-06.pt
+[600/1035] Date: 2023-04-27, PnL: $148.94, ε: 0.0218, env_steps: 748,817, update_steps: 187,404
+  Checkpoint saved: models\final_checkpoint_day600_2023-04-27.pt
+[700/1035] Date: 2023-09-15, PnL: $675.61, ε: 0.0100, env_steps: 874,389, update_steps: 218,841
+  Checkpoint saved: models\final_checkpoint_day700_2023-09-15.pt
+[800/1035] Date: 2024-02-06, PnL: $-1.43, ε: 0.0100, env_steps: 1,000,107, update_steps: 250,307
+  Checkpoint saved: models\final_checkpoint_day800_2024-02-06.pt
+[900/1035] Date: 2024-06-25, PnL: $-146.63, ε: 0.0100, env_steps: 1,129,377, update_steps: 282,669
+  Checkpoint saved: models\final_checkpoint_day900_2024-06-25.pt
+[1000/1035] Date: 2024-11-12, PnL: $-180.22, ε: 0.0100, env_steps: 1,258,610, update_steps: 315,022
+  Checkpoint saved: models\final_checkpoint_day1000_2024-11-12.pt
+[1035/1035] Date: 2024-12-31, PnL: $-59.78, ε: 0.0100, env_steps: 1,303,820, update_steps: 326,340
+
+================================================================================
+Final Training PERFORMANCE SUMMARY
+================================================================================
+
+--- Trading Activity ---
+Trading Days: 1035
+Total Trades: 9250
+Avg Trades/Day: 8.9
+
+--- Daily P&L Performance ---
+Total P&L: $7,721.87
+Average Daily P&L: $7.46
+Best Day: $1,198.67
+Worst Day: $-280.11
+Daily P&L Std Dev: $160.03
+
+--- Win/Loss Statistics ---
+Winning Days: 469 (45.3%)
+Losing Days: 564
+Average Win: $145.82
+Average Loss: $-107.56
+Profit Factor: 1.13
+Max Consecutive Wins: 7
+Max Consecutive Losses: 12
+
+--- Risk Metrics ---
+Daily Starting Capital: $10,000.00 (resets each day)
+Cumulative P&L: $7,721.87
+Peak Cumulative P&L: $8,600.67
+Max Drawdown (from cumulative peak): $3,853.91
+Current Drawdown: $878.80
+Max Intraday DD (single day): $-280.11
+Sharpe Ratio (annualized): 0.74
+================================================================================
+
+
+--- Final Test: 2025-01-02 -> 2025-12-31 ---
+Test days: 259
+  Date: 2025-01-02
+    Episode Reward: -2.92
+    Realized PnL: $-94.50
+    Max Drawdown: $-98.00
+    Trades: 6
+    Win Rate: 33.33%
+    Avg MAE: $31.65
+    Avg Trade Duration: 17.3 steps
+    Exit Reasons: {'stop_loss': 3, 'reversal': 2, 'manual': 1}
+  Date: 2025-01-03
+    Episode Reward: -2.55
+    Realized PnL: $-68.29
+    Max Drawdown: $-102.85
+    Trades: 7
+    Win Rate: 42.86%
+    Avg MAE: $31.21
+    Avg Trade Duration: 16.7 steps
+    Exit Reasons: {'reversal': 2, 'stop_loss': 4, 'manual': 1}
+  Date: 2025-01-06
+    Episode Reward: -2.82
+    Realized PnL: $-83.74
+    Max Drawdown: $-83.74
+    Trades: 7
+    Win Rate: 42.86%
+    Avg MAE: $38.01
+    Avg Trade Duration: 12.0 steps
+    Exit Reasons: {'stop_loss': 4, 'reversal': 2, 'manual': 1}
+  Date: 2025-01-07
+    Episode Reward: -4.59
+    Realized PnL: $-184.29
+    Max Drawdown: $-184.29
+    Trades: 5
+    Win Rate: 20.00%
+    Avg MAE: $45.12
+    Avg Trade Duration: 10.4 steps
+    Exit Reasons: {'stop_loss': 4, 'reversal': 1}
+  Date: 2025-01-08
+    Episode Reward: 7.07
+    Realized PnL: $504.16
+    Max Drawdown: $0.00
+    Trades: 7
+    Win Rate: 71.43%
+    Avg MAE: $30.31
+    Avg Trade Duration: 20.7 steps
+    Exit Reasons: {'reversal': 3, 'manual': 2, 'stop_loss': 2}
+  Date: 2025-01-09
+    Episode Reward: 0.99
+    Realized PnL: $130.57
+    Max Drawdown: $-50.91
+    Trades: 10
+    Win Rate: 40.00%
+    Avg MAE: $24.23
+    Avg Trade Duration: 29.3 steps
+    Exit Reasons: {'stop_loss': 2, 'manual': 3, 'reversal': 4, 'max_duration': 1}
+  Date: 2025-01-10
+    Episode Reward: -4.87
+    Realized PnL: $-153.96
+    Max Drawdown: $-153.96
+    Trades: 8
+    Win Rate: 37.50%
+    Avg MAE: $61.13
+    Avg Trade Duration: 20.9 steps
+    Exit Reasons: {'stop_loss': 4, 'reversal': 3, 'manual': 1}
+  Date: 2025-01-13
+    Episode Reward: 1.69
+    Realized PnL: $117.61
+    Max Drawdown: $-30.02
+    Trades: 6
+    Win Rate: 50.00%
+    Avg MAE: $24.95
+    Avg Trade Duration: 29.5 steps
+    Exit Reasons: {'reversal': 2, 'stop_loss': 2, 'manual': 1, 'max_duration': 1}
+  Date: 2025-01-14
+    Episode Reward: 2.45
+    Realized PnL: $179.76
+    Max Drawdown: $-51.15
+    Trades: 8
+    Win Rate: 62.50%
+    Avg MAE: $21.36
+    Avg Trade Duration: 16.2 steps
+    Exit Reasons: {'reversal': 4, 'stop_loss': 3, 'manual': 1}
+  Date: 2025-01-15
+    Episode Reward: -6.40
+    Realized PnL: $-244.00
+    Max Drawdown: $-244.00
+    Trades: 6
+    Win Rate: 0.00%
+    Avg MAE: $44.95
+    Avg Trade Duration: 12.2 steps
+    Exit Reasons: {'stop_loss': 4, 'reversal': 2}
+  Date: 2025-01-16
+    Episode Reward: 0.55
+    Realized PnL: $102.86
+    Max Drawdown: $-136.54
+    Trades: 9
+    Win Rate: 66.67%
+    Avg MAE: $25.97
+    Avg Trade Duration: 16.1 steps
+    Exit Reasons: {'reversal': 5, 'manual': 1, 'stop_loss': 3}
+  Date: 2025-01-17
+    Episode Reward: 3.53
+    Realized PnL: $230.50
+    Max Drawdown: $0.00
+    Trades: 9
+    Win Rate: 55.56%
+    Avg MAE: $28.04
+    Avg Trade Duration: 15.8 steps
+    Exit Reasons: {'stop_loss': 3, 'reversal': 2, 'manual': 4}
+  Date: 2025-01-20
+    Episode Reward: -0.43
+    Realized PnL: $66.29
+    Max Drawdown: $-18.33
+    Trades: 10
+    Win Rate: 60.00%
+    Avg MAE: $24.25
+    Avg Trade Duration: 22.3 steps
+    Exit Reasons: {'reversal': 6, 'stop_loss': 2, 'manual': 2}
+  Date: 2025-01-21
+    Episode Reward: 0.14
+    Realized PnL: $76.56
+    Max Drawdown: $-132.77
+    Trades: 9
+    Win Rate: 55.56%
+    Avg MAE: $27.22
+    Avg Trade Duration: 21.2 steps
+    Exit Reasons: {'reversal': 4, 'manual': 3, 'stop_loss': 2}
+  Date: 2025-01-22
+    Episode Reward: 5.06
+    Realized PnL: $307.54
+    Max Drawdown: $0.00
+    Trades: 10
+    Win Rate: 90.00%
+    Avg MAE: $6.65
+    Avg Trade Duration: 21.4 steps
+    Exit Reasons: {'reversal': 7, 'manual': 3}
+  Date: 2025-01-23
+    Episode Reward: -4.38
+    Realized PnL: $-139.00
+    Max Drawdown: $-139.00
+    Trades: 8
+    Win Rate: 37.50%
+    Avg MAE: $37.36
+    Avg Trade Duration: 20.5 steps
+    Exit Reasons: {'stop_loss': 4, 'reversal': 3, 'manual': 1}
+  Date: 2025-01-24
+    Episode Reward: 2.80
+    Realized PnL: $205.49
+    Max Drawdown: $-102.83
+    Trades: 9
+    Win Rate: 44.44%
+    Avg MAE: $21.72
+    Avg Trade Duration: 25.8 steps
+    Exit Reasons: {'reversal': 3, 'manual': 3, 'max_duration': 1, 'stop_loss': 2}
+  Date: 2025-01-27
+    Episode Reward: -5.16
+    Realized PnL: $-186.78
+    Max Drawdown: $-186.78
+    Trades: 7
+    Win Rate: 28.57%
+    Avg MAE: $42.03
+    Avg Trade Duration: 19.7 steps
+    Exit Reasons: {'reversal': 3, 'stop_loss': 4}
+  Date: 2025-01-28
+    Episode Reward: -4.54
+    Realized PnL: $-163.13
+    Max Drawdown: $-163.13
+    Trades: 6
+    Win Rate: 16.67%
+    Avg MAE: $42.66
+    Avg Trade Duration: 18.5 steps
+    Exit Reasons: {'stop_loss': 4, 'reversal': 2}
+  Date: 2025-01-29
+    Episode Reward: -1.25
+    Realized PnL: $30.84
+    Max Drawdown: $-83.15
+    Trades: 10
+    Win Rate: 40.00%
+    Avg MAE: $58.54
+    Avg Trade Duration: 24.3 steps
+    Exit Reasons: {'reversal': 5, 'stop_loss': 4, 'manual': 1}
+  Date: 2025-01-30
+    Episode Reward: -3.79
+    Realized PnL: $-141.20
+    Max Drawdown: $-141.20
+    Trades: 5
+    Win Rate: 20.00%
+    Avg MAE: $42.92
+    Avg Trade Duration: 13.2 steps
+    Exit Reasons: {'stop_loss': 4, 'reversal': 1}
+  Date: 2025-01-31
+    Episode Reward: -2.84
+    Realized PnL: $-57.00
+    Max Drawdown: $-123.06
+    Trades: 10
+    Win Rate: 50.00%
+    Avg MAE: $28.74
+    Avg Trade Duration: 14.6 steps
+    Exit Reasons: {'reversal': 4, 'stop_loss': 4, 'manual': 2}
+  Date: 2025-02-03
+    Episode Reward: 2.78
+    Realized PnL: $178.73
+    Max Drawdown: $-51.15
+    Trades: 7
+    Win Rate: 71.43%
+    Avg MAE: $24.48
+    Avg Trade Duration: 22.7 steps
+    Exit Reasons: {'manual': 2, 'reversal': 3, 'stop_loss': 2}
+  Date: 2025-02-04
+    Episode Reward: -4.12
+    Realized PnL: $-118.14
+    Max Drawdown: $-118.14
+    Trades: 9
+    Win Rate: 33.33%
+    Avg MAE: $31.80
+    Avg Trade Duration: 28.3 steps
+    Exit Reasons: {'reversal': 4, 'stop_loss': 3, 'max_duration': 1, 'manual': 1}
+  Date: 2025-02-05
+    Episode Reward: -3.08
+    Realized PnL: $-102.00
+    Max Drawdown: $-109.04
+    Trades: 6
+    Win Rate: 33.33%
+    Avg MAE: $33.26
+    Avg Trade Duration: 19.0 steps
+    Exit Reasons: {'stop_loss': 4, 'reversal': 2}
+  Date: 2025-02-06
+    Episode Reward: 8.02
+    Realized PnL: $447.42
+    Max Drawdown: $0.00
+    Trades: 7
+    Win Rate: 85.71%
+    Avg MAE: $21.02
+    Avg Trade Duration: 29.0 steps
+    Exit Reasons: {'reversal': 3, 'stop_loss': 1, 'manual': 3}
+  Date: 2025-02-07
+    Episode Reward: 7.90
+    Realized PnL: $466.09
+    Max Drawdown: $0.00
+    Trades: 10
+    Win Rate: 70.00%
+    Avg MAE: $16.06
+    Avg Trade Duration: 29.1 steps
+    Exit Reasons: {'reversal': 5, 'manual': 4, 'max_duration': 1}
+  Date: 2025-02-10
+    Episode Reward: 10.05
+    Realized PnL: $542.82
+    Max Drawdown: $0.00
+    Trades: 9
+    Win Rate: 88.89%
+    Avg MAE: $10.82
+    Avg Trade Duration: 27.8 steps
+    Exit Reasons: {'reversal': 6, 'max_duration': 1, 'stop_loss': 1, 'manual': 1}
+  Date: 2025-02-11
+    Episode Reward: -4.58
+    Realized PnL: $-171.31
+    Max Drawdown: $-171.31
+    Trades: 6
+    Win Rate: 16.67%
+    Avg MAE: $51.28
+    Avg Trade Duration: 15.3 steps
+    Exit Reasons: {'stop_loss': 4, 'reversal': 2}
+  Date: 2025-02-12
+    Episode Reward: 1.05
+    Realized PnL: $147.99
+    Max Drawdown: $-50.99
+    Trades: 10
+    Win Rate: 50.00%
+    Avg MAE: $118.33
+    Avg Trade Duration: 26.1 steps
+    Exit Reasons: {'reversal': 5, 'manual': 2, 'stop_loss': 3}
+  Date: 2025-02-13
+    Episode Reward: 3.77
+    Realized PnL: $234.08
+    Max Drawdown: $0.00
+    Trades: 8
+    Win Rate: 62.50%
+    Avg MAE: $16.07
+    Avg Trade Duration: 29.8 steps
+    Exit Reasons: {'reversal': 4, 'manual': 3, 'max_duration': 1}
+  Date: 2025-02-14
+    Episode Reward: 1.15
+    Realized PnL: $104.16
+    Max Drawdown: $-44.91
+    Trades: 7
+    Win Rate: 71.43%
+    Avg MAE: $18.49
+    Avg Trade Duration: 26.4 steps
+    Exit Reasons: {'reversal': 2, 'manual': 2, 'stop_loss': 2, 'max_duration': 1}
+  Date: 2025-02-17
+    Episode Reward: -3.37
+    Realized PnL: $-85.27
+    Max Drawdown: $-160.01
+    Trades: 8
+    Win Rate: 37.50%
+    Avg MAE: $45.77
+    Avg Trade Duration: 26.2 steps
+    Exit Reasons: {'reversal': 2, 'manual': 1, 'stop_loss': 4, 'max_duration': 1}
+  Date: 2025-02-18
+    Episode Reward: -3.25
+    Realized PnL: $-75.49
+    Max Drawdown: $-126.53
+    Trades: 8
+    Win Rate: 37.50%
+    Avg MAE: $28.16
+    Avg Trade Duration: 30.1 steps
+    Exit Reasons: {'stop_loss': 4, 'reversal': 3, 'manual': 1}
+  Date: 2025-02-19
+    Episode Reward: -1.73
+    Realized PnL: $-26.56
+    Max Drawdown: $-149.86
+    Trades: 7
+    Win Rate: 42.86%
+    Avg MAE: $36.51
+    Avg Trade Duration: 14.6 steps
+    Exit Reasons: {'reversal': 2, 'stop_loss': 4, 'manual': 1}
+  Date: 2025-02-20
+    Episode Reward: 1.66
+    Realized PnL: $171.89
+    Max Drawdown: $-51.12
+    Trades: 10
+    Win Rate: 60.00%
+    Avg MAE: $27.49
+    Avg Trade Duration: 14.9 steps
+    Exit Reasons: {'reversal': 6, 'stop_loss': 3, 'manual': 1}
+  Date: 2025-02-21
+    Episode Reward: 2.65
+    Realized PnL: $205.09
+    Max Drawdown: $-24.60
+    Trades: 9
+    Win Rate: 55.56%
+    Avg MAE: $25.76
+    Avg Trade Duration: 18.1 steps
+    Exit Reasons: {'reversal': 4, 'stop_loss': 3, 'manual': 2}
+  Date: 2025-02-24
+    Episode Reward: 4.88
+    Realized PnL: $323.26
+    Max Drawdown: $-51.88
+    Trades: 10
+    Win Rate: 60.00%
+    Avg MAE: $26.26
+    Avg Trade Duration: 23.0 steps
+    Exit Reasons: {'reversal': 7, 'manual': 2, 'stop_loss': 1}
+  Date: 2025-02-25
+    Episode Reward: -4.08
+    Realized PnL: $-156.18
+    Max Drawdown: $-156.18
+    Trades: 5
+    Win Rate: 20.00%
+    Avg MAE: $45.62
+    Avg Trade Duration: 13.2 steps
+    Exit Reasons: {'stop_loss': 4, 'reversal': 1}
+  Date: 2025-02-26
+    Episode Reward: 1.68
+    Realized PnL: $147.46
+    Max Drawdown: $-27.82
+    Trades: 8
+    Win Rate: 50.00%
+    Avg MAE: $24.73
+    Avg Trade Duration: 24.0 steps
+    Exit Reasons: {'reversal': 3, 'manual': 3, 'stop_loss': 2}
+  Date: 2025-02-27
+    Episode Reward: -5.14
+    Realized PnL: $-193.58
+    Max Drawdown: $-193.58
+    Trades: 6
+    Win Rate: 16.67%
+    Avg MAE: $59.44
+    Avg Trade Duration: 9.3 steps
+    Exit Reasons: {'stop_loss': 4, 'reversal': 2}
+  Date: 2025-02-28
+    Episode Reward: -3.74
+    Realized PnL: $-140.77
+    Max Drawdown: $-199.67
+    Trades: 5
+    Win Rate: 20.00%
+    Avg MAE: $41.36
+    Avg Trade Duration: 10.8 steps
+    Exit Reasons: {'reversal': 1, 'stop_loss': 4}
+  Date: 2025-03-03
+    Episode Reward: 0.02
+    Realized PnL: $37.29
+    Max Drawdown: $-50.44
+    Trades: 6
+    Win Rate: 50.00%
+    Avg MAE: $26.74
+    Avg Trade Duration: 23.5 steps
+    Exit Reasons: {'stop_loss': 3, 'reversal': 3}
+  Date: 2025-03-04
+    Episode Reward: -1.41
+    Realized PnL: $-22.62
+    Max Drawdown: $-133.77
+    Trades: 7
+    Win Rate: 57.14%
+    Avg MAE: $23.11
+    Avg Trade Duration: 14.9 steps
+    Exit Reasons: {'reversal': 3, 'stop_loss': 3, 'manual': 1}
+  Date: 2025-03-05
+    Episode Reward: -3.93
+    Realized PnL: $-120.30
+    Max Drawdown: $-156.24
+    Trades: 9
+    Win Rate: 33.33%
+    Avg MAE: $40.13
+    Avg Trade Duration: 20.2 steps
+    Exit Reasons: {'reversal': 5, 'stop_loss': 4}
+  Date: 2025-03-06
+    Episode Reward: -3.22
+    Realized PnL: $-78.98
+    Max Drawdown: $-88.72
+    Trades: 9
+    Win Rate: 33.33%
+    Avg MAE: $29.17
+    Avg Trade Duration: 26.6 steps
+    Exit Reasons: {'reversal': 3, 'stop_loss': 3, 'manual': 2, 'max_duration': 1}
+  Date: 2025-03-07
+    Episode Reward: -5.76
+    Realized PnL: $-235.75
+    Max Drawdown: $-235.75
+    Trades: 5
+    Win Rate: 0.00%
+    Avg MAE: $41.28
+    Avg Trade Duration: 12.8 steps
+    Exit Reasons: {'stop_loss': 4, 'reversal': 1}
+  Date: 2025-03-10
+    Episode Reward: -5.81
+    Realized PnL: $-228.41
+    Max Drawdown: $-228.41
+    Trades: 5
+    Win Rate: 0.00%
+    Avg MAE: $51.43
+    Avg Trade Duration: 29.8 steps
+    Exit Reasons: {'stop_loss': 4, 'manual': 1}
+  Date: 2025-03-11
+    Episode Reward: -4.28
+    Realized PnL: $-159.02
+    Max Drawdown: $-159.02
+    Trades: 5
+    Win Rate: 20.00%
+    Avg MAE: $44.45
+    Avg Trade Duration: 27.2 steps
+    Exit Reasons: {'stop_loss': 4, 'reversal': 1}
+  Date: 2025-03-12
+    Episode Reward: -5.88
+    Realized PnL: $-222.47
+    Max Drawdown: $-222.47
+    Trades: 7
+    Win Rate: 14.29%
+    Avg MAE: $77.32
+    Avg Trade Duration: 14.4 steps
+    Exit Reasons: {'stop_loss': 4, 'manual': 1, 'reversal': 2}
+  Date: 2025-03-13
+    Episode Reward: -1.06
+    Realized PnL: $-8.39
+    Max Drawdown: $-50.21
+    Trades: 5
+    Win Rate: 40.00%
+    Avg MAE: $42.07
+    Avg Trade Duration: 31.2 steps
+    Exit Reasons: {'reversal': 2, 'stop_loss': 2, 'manual': 1}
+  Date: 2025-03-14
+    Episode Reward: -5.43
+    Realized PnL: $-201.79
+    Max Drawdown: $-208.79
+    Trades: 7
+    Win Rate: 28.57%
+    Avg MAE: $33.80
+    Avg Trade Duration: 15.6 steps
+    Exit Reasons: {'reversal': 3, 'stop_loss': 4}
+  Date: 2025-03-17
+    Episode Reward: -3.49
+    Realized PnL: $-113.96
+    Max Drawdown: $-174.59
+    Trades: 7
+    Win Rate: 28.57%
+    Avg MAE: $31.20
+    Avg Trade Duration: 19.3 steps
+    Exit Reasons: {'reversal': 2, 'stop_loss': 4, 'manual': 1}
+  Date: 2025-03-18
+    Episode Reward: 2.73
+    Realized PnL: $189.47
+    Max Drawdown: $-103.82
+    Trades: 9
+    Win Rate: 55.56%
+    Avg MAE: $18.31
+    Avg Trade Duration: 15.3 steps
+    Exit Reasons: {'reversal': 6, 'manual': 1, 'stop_loss': 2}
+  Date: 2025-03-19
+    Episode Reward: -0.76
+    Realized PnL: $29.30
+    Max Drawdown: $-147.66
+    Trades: 9
+    Win Rate: 55.56%
+    Avg MAE: $30.54
+    Avg Trade Duration: 19.4 steps
+    Exit Reasons: {'stop_loss': 4, 'reversal': 3, 'manual': 2}
+  Date: 2025-03-20
+    Episode Reward: -0.72
+    Realized PnL: $26.99
+    Max Drawdown: $0.00
+    Trades: 8
+    Win Rate: 25.00%
+    Avg MAE: $26.09
+    Avg Trade Duration: 27.4 steps
+    Exit Reasons: {'reversal': 4, 'stop_loss': 1, 'manual': 2, 'max_duration': 1}
+  Date: 2025-03-21
+    Episode Reward: -0.22
+    Realized PnL: $69.57
+    Max Drawdown: $-113.72
+    Trades: 10
+    Win Rate: 40.00%
+    Avg MAE: $28.32
+    Avg Trade Duration: 17.3 steps
+    Exit Reasons: {'manual': 3, 'reversal': 4, 'stop_loss': 3}
+  Date: 2025-03-24
+    Episode Reward: -0.65
+    Realized PnL: $59.77
+    Max Drawdown: $0.00
+    Trades: 10
+    Win Rate: 40.00%
+    Avg MAE: $36.19
+    Avg Trade Duration: 19.6 steps
+    Exit Reasons: {'reversal': 4, 'stop_loss': 2, 'manual': 4}
+  Date: 2025-03-25
+    Episode Reward: 2.86
+    Realized PnL: $209.43
+    Max Drawdown: $0.00
+    Trades: 10
+    Win Rate: 40.00%
+    Avg MAE: $23.59
+    Avg Trade Duration: 22.3 steps
+    Exit Reasons: {'stop_loss': 2, 'reversal': 5, 'manual': 2, 'max_duration': 1}
+  Date: 2025-03-26
+    Episode Reward: -3.96
+    Realized PnL: $-113.33
+    Max Drawdown: $-187.95
+    Trades: 8
+    Win Rate: 37.50%
+    Avg MAE: $46.19
+    Avg Trade Duration: 13.9 steps
+    Exit Reasons: {'reversal': 3, 'stop_loss': 4, 'manual': 1}
+  Date: 2025-03-27
+    Episode Reward: -0.99
+    Realized PnL: $22.15
+    Max Drawdown: $-125.91
+    Trades: 8
+    Win Rate: 37.50%
+    Avg MAE: $35.57
+    Avg Trade Duration: 22.2 steps
+    Exit Reasons: {'reversal': 2, 'manual': 3, 'stop_loss': 3}
+  Date: 2025-03-28
+    Episode Reward: -4.57
+    Realized PnL: $-155.52
+    Max Drawdown: $-173.18
+    Trades: 7
+    Win Rate: 14.29%
+    Avg MAE: $36.30
+    Avg Trade Duration: 21.4 steps
+    Exit Reasons: {'reversal': 2, 'stop_loss': 4, 'manual': 1}
+  Date: 2025-03-31
+    Episode Reward: -4.90
+    Realized PnL: $-198.50
+    Max Drawdown: $-198.50
+    Trades: 4
+    Win Rate: 0.00%
+    Avg MAE: $53.35
+    Avg Trade Duration: 21.0 steps
+    Exit Reasons: {'stop_loss': 4}
+  Date: 2025-04-01
+    Episode Reward: -4.17
+    Realized PnL: $-125.85
+    Max Drawdown: $-125.85
+    Trades: 8
+    Win Rate: 25.00%
+    Avg MAE: $32.81
+    Avg Trade Duration: 28.8 steps
+    Exit Reasons: {'stop_loss': 3, 'reversal': 4, 'manual': 1}
+  Date: 2025-04-02
+    Episode Reward: 3.49
+    Realized PnL: $222.31
+    Max Drawdown: $0.00
+    Trades: 8
+    Win Rate: 50.00%
+    Avg MAE: $27.42
+    Avg Trade Duration: 29.2 steps
+    Exit Reasons: {'stop_loss': 2, 'manual': 2, 'reversal': 3, 'max_duration': 1}
+  Date: 2025-04-03
+    Episode Reward: -4.42
+    Realized PnL: $-140.92
+    Max Drawdown: $-140.92
+    Trades: 7
+    Win Rate: 28.57%
+    Avg MAE: $38.24
+    Avg Trade Duration: 37.9 steps
+    Exit Reasons: {'stop_loss': 4, 'manual': 2, 'reversal': 1}
+  Date: 2025-04-04
+    Episode Reward: -4.16
+    Realized PnL: $-142.05
+    Max Drawdown: $-212.35
+    Trades: 7
+    Win Rate: 28.57%
+    Avg MAE: $44.98
+    Avg Trade Duration: 14.0 steps
+    Exit Reasons: {'reversal': 2, 'stop_loss': 4, 'manual': 1}
+  Date: 2025-04-07
+    Episode Reward: -1.67
+    Realized PnL: $-29.07
+    Max Drawdown: $-57.84
+    Trades: 8
+    Win Rate: 50.00%
+    Avg MAE: $24.92
+    Avg Trade Duration: 25.0 steps
+    Exit Reasons: {'stop_loss': 3, 'reversal': 3, 'manual': 2}
+  Date: 2025-04-08
+    Episode Reward: 2.65
+    Realized PnL: $153.82
+    Max Drawdown: $0.00
+    Trades: 6
+    Win Rate: 50.00%
+    Avg MAE: $25.26
+    Avg Trade Duration: 24.0 steps
+    Exit Reasons: {'reversal': 1, 'stop_loss': 2, 'manual': 3}
+  Date: 2025-04-09
+    Episode Reward: -2.53
+    Realized PnL: $-96.19
+    Max Drawdown: $-96.19
+    Trades: 4
+    Win Rate: 25.00%
+    Avg MAE: $50.98
+    Avg Trade Duration: 16.8 steps
+    Exit Reasons: {'stop_loss': 3, 'manual': 1}
+  Date: 2025-04-10
+    Episode Reward: -2.80
+    Realized PnL: $-77.73
+    Max Drawdown: $-101.31
+    Trades: 8
+    Win Rate: 37.50%
+    Avg MAE: $29.63
+    Avg Trade Duration: 19.0 steps
+    Exit Reasons: {'reversal': 3, 'manual': 2, 'stop_loss': 2, 'end_of_day': 1}
+  Date: 2025-04-11
+    Episode Reward: -5.63
+    Realized PnL: $-182.68
+    Max Drawdown: $-182.68
+    Trades: 10
+    Win Rate: 30.00%
+    Avg MAE: $36.93
+    Avg Trade Duration: 17.1 steps
+    Exit Reasons: {'stop_loss': 4, 'manual': 2, 'reversal': 4}
+  Date: 2025-04-14
+    Episode Reward: 7.84
+    Realized PnL: $443.16
+    Max Drawdown: $0.00
+    Trades: 7
+    Win Rate: 57.14%
+    Avg MAE: $15.01
+    Avg Trade Duration: 29.7 steps
+    Exit Reasons: {'reversal': 3, 'manual': 2, 'stop_loss': 1, 'max_duration': 1}
+  Date: 2025-04-15
+    Episode Reward: -4.31
+    Realized PnL: $-159.67
+    Max Drawdown: $-159.67
+    Trades: 6
+    Win Rate: 16.67%
+    Avg MAE: $40.73
+    Avg Trade Duration: 16.2 steps
+    Exit Reasons: {'reversal': 1, 'stop_loss': 4, 'manual': 1}
+  Date: 2025-04-16
+    Episode Reward: -1.65
+    Realized PnL: $-14.43
+    Max Drawdown: $-103.30
+    Trades: 8
+    Win Rate: 37.50%
+    Avg MAE: $30.82
+    Avg Trade Duration: 15.8 steps
+    Exit Reasons: {'stop_loss': 4, 'manual': 1, 'reversal': 3}
+  Date: 2025-04-17
+    Episode Reward: -0.65
+    Realized PnL: $32.08
+    Max Drawdown: $-50.41
+    Trades: 8
+    Win Rate: 50.00%
+    Avg MAE: $34.16
+    Avg Trade Duration: 18.9 steps
+    Exit Reasons: {'stop_loss': 3, 'reversal': 4, 'manual': 1}
+  Date: 2025-04-18
+    Episode Reward: -0.46
+    Realized PnL: $0.00
+    Max Drawdown: $0.00
+    Trades: 3
+    Win Rate: 0.00%
+    Avg MAE: $0.00
+    Avg Trade Duration: 65.0 steps
+    Exit Reasons: {'reversal': 1, 'max_duration': 2}
+  Date: 2025-04-21
+    Episode Reward: -5.11
+    Realized PnL: $-205.73
+    Max Drawdown: $-205.73
+    Trades: 5
+    Win Rate: 0.00%
+    Avg MAE: $42.93
+    Avg Trade Duration: 14.4 steps
+    Exit Reasons: {'stop_loss': 4, 'reversal': 1}
+  Date: 2025-04-22
+    Episode Reward: 1.33
+    Realized PnL: $135.95
+    Max Drawdown: $-123.67
+    Trades: 10
+    Win Rate: 30.00%
+    Avg MAE: $29.99
+    Avg Trade Duration: 20.3 steps
+    Exit Reasons: {'reversal': 4, 'manual': 3, 'stop_loss': 3}
+  Date: 2025-04-23
+    Episode Reward: -1.88
+    Realized PnL: $-27.36
+    Max Drawdown: $-201.97
+    Trades: 8
+    Win Rate: 50.00%
+    Avg MAE: $36.77
+    Avg Trade Duration: 23.5 steps
+    Exit Reasons: {'reversal': 2, 'manual': 2, 'stop_loss': 4}
+  Date: 2025-04-24
+    Episode Reward: 2.95
+    Realized PnL: $203.41
+    Max Drawdown: $0.00
+    Trades: 8
+    Win Rate: 50.00%
+    Avg MAE: $29.07
+    Avg Trade Duration: 32.5 steps
+    Exit Reasons: {'reversal': 4, 'manual': 1, 'stop_loss': 2, 'max_duration': 1}
+  Date: 2025-04-25
+    Episode Reward: -6.28
+    Realized PnL: $-230.65
+    Max Drawdown: $-230.65
+    Trades: 9
+    Win Rate: 22.22%
+    Avg MAE: $30.41
+    Avg Trade Duration: 15.7 steps
+    Exit Reasons: {'reversal': 5, 'stop_loss': 4}
+  Date: 2025-04-28
+    Episode Reward: -5.54
+    Realized PnL: $-223.40
+    Max Drawdown: $-223.40
+    Trades: 5
+    Win Rate: 0.00%
+    Avg MAE: $60.42
+    Avg Trade Duration: 14.0 steps
+    Exit Reasons: {'stop_loss': 4, 'reversal': 1}
+  Date: 2025-04-29
+    Episode Reward: 0.69
+    Realized PnL: $75.73
+    Max Drawdown: $-152.66
+    Trades: 6
+    Win Rate: 33.33%
+    Avg MAE: $47.21
+    Avg Trade Duration: 20.2 steps
+    Exit Reasons: {'stop_loss': 4, 'manual': 2}
+  Date: 2025-04-30
+    Episode Reward: -2.45
+    Realized PnL: $-43.28
+    Max Drawdown: $-100.32
+    Trades: 9
+    Win Rate: 33.33%
+    Avg MAE: $28.56
+    Avg Trade Duration: 16.0 steps
+    Exit Reasons: {'stop_loss': 4, 'reversal': 4, 'manual': 1}
+  Date: 2025-05-01
+    Episode Reward: 1.01
+    Realized PnL: $109.69
+    Max Drawdown: $0.00
+    Trades: 9
+    Win Rate: 55.56%
+    Avg MAE: $19.91
+    Avg Trade Duration: 18.7 steps
+    Exit Reasons: {'reversal': 4, 'manual': 3, 'stop_loss': 2}
+  Date: 2025-05-02
+    Episode Reward: 2.60
+    Realized PnL: $197.33
+    Max Drawdown: $-25.01
+    Trades: 10
+    Win Rate: 60.00%
+    Avg MAE: $26.21
+    Avg Trade Duration: 18.7 steps
+    Exit Reasons: {'reversal': 6, 'stop_loss': 3, 'manual': 1}
+  Date: 2025-05-05
+    Episode Reward: -2.28
+    Realized PnL: $-43.97
+    Max Drawdown: $-50.03
+    Trades: 8
+    Win Rate: 37.50%
+    Avg MAE: $30.10
+    Avg Trade Duration: 21.6 steps
+    Exit Reasons: {'reversal': 2, 'stop_loss': 4, 'manual': 2}
+  Date: 2025-05-06
+    Episode Reward: -4.88
+    Realized PnL: $-198.50
+    Max Drawdown: $-198.50
+    Trades: 4
+    Win Rate: 0.00%
+    Avg MAE: $64.22
+    Avg Trade Duration: 12.2 steps
+    Exit Reasons: {'stop_loss': 4}
+  Date: 2025-05-07
+    Episode Reward: 1.18
+    Realized PnL: $131.84
+    Max Drawdown: $0.00
+    Trades: 10
+    Win Rate: 60.00%
+    Avg MAE: $30.16
+    Avg Trade Duration: 20.0 steps
+    Exit Reasons: {'reversal': 6, 'stop_loss': 2, 'manual': 2}
+  Date: 2025-05-08
+    Episode Reward: 3.47
+    Realized PnL: $421.85
+    Max Drawdown: $-89.29
+    Trades: 10
+    Win Rate: 60.00%
+    Avg MAE: $27.01
+    Avg Trade Duration: 21.0 steps
+    Exit Reasons: {'reversal': 5, 'stop_loss': 4, 'manual': 1}
+  Date: 2025-05-09
+    Episode Reward: -0.36
+    Realized PnL: $21.08
+    Max Drawdown: $-100.97
+    Trades: 7
+    Win Rate: 28.57%
+    Avg MAE: $58.36
+    Avg Trade Duration: 20.3 steps
+    Exit Reasons: {'stop_loss': 4, 'manual': 1, 'reversal': 2}
+  Date: 2025-05-12
+    Episode Reward: -1.25
+    Realized PnL: $-5.01
+    Max Drawdown: $-99.11
+    Trades: 7
+    Win Rate: 57.14%
+    Avg MAE: $31.57
+    Avg Trade Duration: 16.3 steps
+    Exit Reasons: {'reversal': 4, 'stop_loss': 2, 'manual': 1}
+  Date: 2025-05-13
+    Episode Reward: -3.95
+    Realized PnL: $-130.45
+    Max Drawdown: $-179.33
+    Trades: 7
+    Win Rate: 28.57%
+    Avg MAE: $43.78
+    Avg Trade Duration: 19.6 steps
+    Exit Reasons: {'reversal': 2, 'stop_loss': 4, 'manual': 1}
+  Date: 2025-05-14
+    Episode Reward: -3.42
+    Realized PnL: $-101.32
+    Max Drawdown: $-157.35
+    Trades: 7
+    Win Rate: 28.57%
+    Avg MAE: $35.06
+    Avg Trade Duration: 15.1 steps
+    Exit Reasons: {'reversal': 3, 'stop_loss': 4}
+  Date: 2025-05-15
+    Episode Reward: 1.79
+    Realized PnL: $157.88
+    Max Drawdown: $0.00
+    Trades: 8
+    Win Rate: 62.50%
+    Avg MAE: $30.35
+    Avg Trade Duration: 33.0 steps
+    Exit Reasons: {'reversal': 4, 'stop_loss': 2, 'manual': 1, 'max_duration': 1}
+  Date: 2025-05-16
+    Episode Reward: -0.65
+    Realized PnL: $31.78
+    Max Drawdown: $-121.32
+    Trades: 9
+    Win Rate: 55.56%
+    Avg MAE: $21.98
+    Avg Trade Duration: 18.3 steps
+    Exit Reasons: {'reversal': 4, 'manual': 2, 'stop_loss': 3}
+  Date: 2025-05-19
+    Episode Reward: -1.35
+    Realized PnL: $-2.13
+    Max Drawdown: $-242.65
+    Trades: 8
+    Win Rate: 25.00%
+    Avg MAE: $34.80
+    Avg Trade Duration: 21.5 steps
+    Exit Reasons: {'reversal': 3, 'manual': 1, 'stop_loss': 4}
+  Date: 2025-05-20
+    Episode Reward: 3.83
+    Realized PnL: $249.51
+    Max Drawdown: $0.00
+    Trades: 10
+    Win Rate: 70.00%
+    Avg MAE: $17.28
+    Avg Trade Duration: 16.2 steps
+    Exit Reasons: {'reversal': 7, 'stop_loss': 1, 'manual': 2}
+  Date: 2025-05-21
+    Episode Reward: -3.24
+    Realized PnL: $-109.85
+    Max Drawdown: $-149.85
+    Trades: 6
+    Win Rate: 33.33%
+    Avg MAE: $35.30
+    Avg Trade Duration: 21.8 steps
+    Exit Reasons: {'reversal': 1, 'stop_loss': 4, 'manual': 1}
+  Date: 2025-05-22
+    Episode Reward: -5.21
+    Realized PnL: $-189.30
+    Max Drawdown: $-189.30
+    Trades: 6
+    Win Rate: 16.67%
+    Avg MAE: $43.93
+    Avg Trade Duration: 17.7 steps
+    Exit Reasons: {'stop_loss': 4, 'reversal': 2}
+  Date: 2025-05-23
+    Episode Reward: -2.26
+    Realized PnL: $-61.94
+    Max Drawdown: $-61.94
+    Trades: 6
+    Win Rate: 33.33%
+    Avg MAE: $30.76
+    Avg Trade Duration: 15.3 steps
+    Exit Reasons: {'stop_loss': 4, 'reversal': 1, 'manual': 1}
+  Date: 2025-05-26
+    Episode Reward: -2.43
+    Realized PnL: $-40.38
+    Max Drawdown: $-65.50
+    Trades: 10
+    Win Rate: 30.00%
+    Avg MAE: $31.06
+    Avg Trade Duration: 20.4 steps
+    Exit Reasons: {'reversal': 4, 'manual': 3, 'stop_loss': 3}
+  Date: 2025-05-27
+    Episode Reward: -5.22
+    Realized PnL: $-190.34
+    Max Drawdown: $-191.45
+    Trades: 6
+    Win Rate: 16.67%
+    Avg MAE: $40.38
+    Avg Trade Duration: 24.3 steps
+    Exit Reasons: {'reversal': 3, 'stop_loss': 3}
+  Date: 2025-05-28
+    Episode Reward: -1.01
+    Realized PnL: $21.13
+    Max Drawdown: $-73.93
+    Trades: 9
+    Win Rate: 44.44%
+    Avg MAE: $24.76
+    Avg Trade Duration: 26.2 steps
+    Exit Reasons: {'manual': 1, 'reversal': 4, 'stop_loss': 3, 'max_duration': 1}
+  Date: 2025-05-29
+    Episode Reward: 8.23
+    Realized PnL: $436.74
+    Max Drawdown: $0.00
+    Trades: 8
+    Win Rate: 75.00%
+    Avg MAE: $16.08
+    Avg Trade Duration: 26.0 steps
+    Exit Reasons: {'reversal': 4, 'manual': 3, 'stop_loss': 1}
+  Date: 2025-05-30
+    Episode Reward: 2.96
+    Realized PnL: $195.49
+    Max Drawdown: $-51.23
+    Trades: 7
+    Win Rate: 42.86%
+    Avg MAE: $37.38
+    Avg Trade Duration: 26.7 steps
+    Exit Reasons: {'reversal': 3, 'stop_loss': 3, 'manual': 1}
+  Date: 2025-06-02
+    Episode Reward: 3.56
+    Realized PnL: $284.42
+    Max Drawdown: $0.00
+    Trades: 6
+    Win Rate: 50.00%
+    Avg MAE: $37.21
+    Avg Trade Duration: 22.3 steps
+    Exit Reasons: {'reversal': 2, 'stop_loss': 2, 'manual': 2}
+  Date: 2025-06-03
+    Episode Reward: -4.77
+    Realized PnL: $-198.50
+    Max Drawdown: $-198.50
+    Trades: 4
+    Win Rate: 0.00%
+    Avg MAE: $65.01
+    Avg Trade Duration: 10.8 steps
+    Exit Reasons: {'stop_loss': 4}
+  Date: 2025-06-04
+    Episode Reward: -4.03
+    Realized PnL: $-143.82
+    Max Drawdown: $-149.33
+    Trades: 6
+    Win Rate: 33.33%
+    Avg MAE: $49.11
+    Avg Trade Duration: 17.5 steps
+    Exit Reasons: {'stop_loss': 4, 'reversal': 1, 'manual': 1}
+  Date: 2025-06-05
+    Episode Reward: -3.76
+    Realized PnL: $-99.83
+    Max Drawdown: $-125.98
+    Trades: 9
+    Win Rate: 44.44%
+    Avg MAE: $37.29
+    Avg Trade Duration: 16.6 steps
+    Exit Reasons: {'stop_loss': 4, 'reversal': 4, 'manual': 1}
+  Date: 2025-06-06
+    Episode Reward: 5.34
+    Realized PnL: $296.42
+    Max Drawdown: $0.00
+    Trades: 7
+    Win Rate: 57.14%
+    Avg MAE: $24.89
+    Avg Trade Duration: 28.9 steps
+    Exit Reasons: {'reversal': 3, 'stop_loss': 1, 'manual': 3}
+  Date: 2025-06-09
+    Episode Reward: -2.04
+    Realized PnL: $-35.05
+    Max Drawdown: $-100.40
+    Trades: 8
+    Win Rate: 50.00%
+    Avg MAE: $27.31
+    Avg Trade Duration: 21.1 steps
+    Exit Reasons: {'reversal': 4, 'stop_loss': 3, 'manual': 1}
+  Date: 2025-06-10
+    Episode Reward: -3.07
+    Realized PnL: $-72.67
+    Max Drawdown: $-72.67
+    Trades: 10
+    Win Rate: 40.00%
+    Avg MAE: $23.35
+    Avg Trade Duration: 17.3 steps
+    Exit Reasons: {'manual': 5, 'reversal': 3, 'stop_loss': 2}
+  Date: 2025-06-11
+    Episode Reward: -0.41
+    Realized PnL: $40.97
+    Max Drawdown: $-50.46
+    Trades: 8
+    Win Rate: 50.00%
+    Avg MAE: $29.73
+    Avg Trade Duration: 14.9 steps
+    Exit Reasons: {'stop_loss': 2, 'reversal': 4, 'manual': 2}
+  Date: 2025-06-12
+    Episode Reward: -3.07
+    Realized PnL: $-92.28
+    Max Drawdown: $-100.69
+    Trades: 8
+    Win Rate: 50.00%
+    Avg MAE: $24.08
+    Avg Trade Duration: 18.6 steps
+    Exit Reasons: {'reversal': 4, 'stop_loss': 4}
+  Date: 2025-06-13
+    Episode Reward: -2.81
+    Realized PnL: $-71.28
+    Max Drawdown: $-162.26
+    Trades: 8
+    Win Rate: 50.00%
+    Avg MAE: $35.96
+    Avg Trade Duration: 22.8 steps
+    Exit Reasons: {'reversal': 3, 'stop_loss': 4, 'manual': 1}
+  Date: 2025-06-16
+    Episode Reward: -3.98
+    Realized PnL: $-128.32
+    Max Drawdown: $-221.75
+    Trades: 9
+    Win Rate: 44.44%
+    Avg MAE: $34.49
+    Avg Trade Duration: 12.9 steps
+    Exit Reasons: {'reversal': 3, 'manual': 2, 'stop_loss': 4}
+  Date: 2025-06-17
+    Episode Reward: -5.88
+    Realized PnL: $-223.54
+    Max Drawdown: $-223.54
+    Trades: 8
+    Win Rate: 25.00%
+    Avg MAE: $32.58
+    Avg Trade Duration: 12.1 steps
+    Exit Reasons: {'stop_loss': 4, 'reversal': 3, 'manual': 1}
+  Date: 2025-06-18
+    Episode Reward: 0.66
+    Realized PnL: $85.07
+    Max Drawdown: $-101.96
+    Trades: 8
+    Win Rate: 50.00%
+    Avg MAE: $30.95
+    Avg Trade Duration: 15.4 steps
+    Exit Reasons: {'reversal': 2, 'manual': 2, 'stop_loss': 4}
+  Date: 2025-06-19
+    Episode Reward: -1.66
+    Realized PnL: $-7.18
+    Max Drawdown: $-100.68
+    Trades: 7
+    Win Rate: 42.86%
+    Avg MAE: $43.26
+    Avg Trade Duration: 22.0 steps
+    Exit Reasons: {'stop_loss': 4, 'reversal': 3}
+  Date: 2025-06-20
+    Episode Reward: 1.77
+    Realized PnL: $149.77
+    Max Drawdown: $0.00
+    Trades: 8
+    Win Rate: 62.50%
+    Avg MAE: $28.79
+    Avg Trade Duration: 29.8 steps
+    Exit Reasons: {'reversal': 4, 'manual': 2, 'stop_loss': 1, 'max_duration': 1}
+  Date: 2025-06-23
+    Episode Reward: 0.84
+    Realized PnL: $103.95
+    Max Drawdown: $-50.77
+    Trades: 8
+    Win Rate: 62.50%
+    Avg MAE: $33.51
+    Avg Trade Duration: 24.6 steps
+    Exit Reasons: {'reversal': 3, 'stop_loss': 3, 'manual': 2}
+  Date: 2025-06-24
+    Episode Reward: -3.83
+    Realized PnL: $-145.10
+    Max Drawdown: $-199.59
+    Trades: 5
+    Win Rate: 20.00%
+    Avg MAE: $44.83
+    Avg Trade Duration: 13.4 steps
+    Exit Reasons: {'reversal': 1, 'stop_loss': 4}
+  Date: 2025-06-25
+    Episode Reward: -3.71
+    Realized PnL: $-110.05
+    Max Drawdown: $-172.25
+    Trades: 8
+    Win Rate: 37.50%
+    Avg MAE: $37.21
+    Avg Trade Duration: 15.0 steps
+    Exit Reasons: {'reversal': 3, 'stop_loss': 4, 'manual': 1}
+  Date: 2025-06-26
+    Episode Reward: 4.16
+    Realized PnL: $271.77
+    Max Drawdown: $-7.60
+    Trades: 10
+    Win Rate: 70.00%
+    Avg MAE: $22.18
+    Avg Trade Duration: 23.4 steps
+    Exit Reasons: {'stop_loss': 2, 'reversal': 4, 'manual': 4}
+  Date: 2025-06-27
+    Episode Reward: -3.09
+    Realized PnL: $-75.74
+    Max Drawdown: $-75.74
+    Trades: 9
+    Win Rate: 44.44%
+    Avg MAE: $32.90
+    Avg Trade Duration: 15.9 steps
+    Exit Reasons: {'stop_loss': 4, 'reversal': 4, 'manual': 1}
+  Date: 2025-06-30
+    Episode Reward: -4.31
+    Realized PnL: $-149.65
+    Max Drawdown: $-157.19
+    Trades: 7
+    Win Rate: 42.86%
+    Avg MAE: $37.88
+    Avg Trade Duration: 17.0 steps
+    Exit Reasons: {'reversal': 1, 'stop_loss': 4, 'manual': 2}
+  Date: 2025-07-01
+    Episode Reward: -3.43
+    Realized PnL: $-96.45
+    Max Drawdown: $-114.37
+    Trades: 9
+    Win Rate: 22.22%
+    Avg MAE: $25.15
+    Avg Trade Duration: 16.6 steps
+    Exit Reasons: {'reversal': 4, 'stop_loss': 4, 'manual': 1}
+  Date: 2025-07-02
+    Episode Reward: -0.72
+    Realized PnL: $6.86
+    Max Drawdown: $-151.62
+    Trades: 7
+    Win Rate: 28.57%
+    Avg MAE: $29.34
+    Avg Trade Duration: 10.7 steps
+    Exit Reasons: {'reversal': 3, 'stop_loss': 4}
+  Date: 2025-07-03
+    Episode Reward: -4.59
+    Realized PnL: $-154.61
+    Max Drawdown: $-183.23
+    Trades: 7
+    Win Rate: 42.86%
+    Avg MAE: $38.84
+    Avg Trade Duration: 20.0 steps
+    Exit Reasons: {'reversal': 3, 'stop_loss': 4}
+  Date: 2025-07-04
+    Episode Reward: -3.60
+    Realized PnL: $-98.32
+    Max Drawdown: $-98.32
+    Trades: 9
+    Win Rate: 33.33%
+    Avg MAE: $27.15
+    Avg Trade Duration: 30.9 steps
+    Exit Reasons: {'stop_loss': 3, 'reversal': 3, 'manual': 3}
+  Date: 2025-07-07
+    Episode Reward: -2.55
+    Realized PnL: $-37.85
+    Max Drawdown: $-99.29
+    Trades: 10
+    Win Rate: 40.00%
+    Avg MAE: $28.88
+    Avg Trade Duration: 22.2 steps
+    Exit Reasons: {'reversal': 4, 'stop_loss': 3, 'manual': 3}
+  Date: 2025-07-08
+    Episode Reward: -4.96
+    Realized PnL: $-184.76
+    Max Drawdown: $-195.87
+    Trades: 6
+    Win Rate: 33.33%
+    Avg MAE: $45.00
+    Avg Trade Duration: 14.5 steps
+    Exit Reasons: {'reversal': 2, 'stop_loss': 4}
+  Date: 2025-07-09
+    Episode Reward: -4.68
+    Realized PnL: $-164.04
+    Max Drawdown: $-181.94
+    Trades: 7
+    Win Rate: 14.29%
+    Avg MAE: $43.42
+    Avg Trade Duration: 10.3 steps
+    Exit Reasons: {'stop_loss': 4, 'reversal': 2, 'manual': 1}
+  Date: 2025-07-10
+    Episode Reward: -4.87
+    Realized PnL: $-198.50
+    Max Drawdown: $-198.50
+    Trades: 4
+    Win Rate: 0.00%
+    Avg MAE: $54.10
+    Avg Trade Duration: 15.2 steps
+    Exit Reasons: {'stop_loss': 4}
+  Date: 2025-07-11
+    Episode Reward: -2.13
+    Realized PnL: $-20.30
+    Max Drawdown: $-81.03
+    Trades: 9
+    Win Rate: 44.44%
+    Avg MAE: $30.72
+    Avg Trade Duration: 21.3 steps
+    Exit Reasons: {'reversal': 3, 'manual': 2, 'stop_loss': 4}
+  Date: 2025-07-14
+    Episode Reward: -2.95
+    Realized PnL: $-79.18
+    Max Drawdown: $-150.31
+    Trades: 8
+    Win Rate: 50.00%
+    Avg MAE: $32.39
+    Avg Trade Duration: 22.1 steps
+    Exit Reasons: {'stop_loss': 4, 'reversal': 3, 'manual': 1}
+  Date: 2025-07-15
+    Episode Reward: -0.41
+    Realized PnL: $49.92
+    Max Drawdown: $-152.27
+    Trades: 9
+    Win Rate: 55.56%
+    Avg MAE: $30.22
+    Avg Trade Duration: 16.3 steps
+    Exit Reasons: {'manual': 2, 'reversal': 3, 'stop_loss': 4}
+  Date: 2025-07-16
+    Episode Reward: -2.85
+    Realized PnL: $-89.07
+    Max Drawdown: $-150.16
+    Trades: 6
+    Win Rate: 33.33%
+    Avg MAE: $45.18
+    Avg Trade Duration: 21.7 steps
+    Exit Reasons: {'stop_loss': 4, 'reversal': 1, 'manual': 1}
+  Date: 2025-07-17
+    Episode Reward: 2.16
+    Realized PnL: $154.60
+    Max Drawdown: $0.00
+    Trades: 7
+    Win Rate: 42.86%
+    Avg MAE: $25.19
+    Avg Trade Duration: 21.7 steps
+    Exit Reasons: {'reversal': 3, 'stop_loss': 2, 'manual': 2}
+  Date: 2025-07-18
+    Episode Reward: -2.91
+    Realized PnL: $-73.07
+    Max Drawdown: $-100.02
+    Trades: 7
+    Win Rate: 28.57%
+    Avg MAE: $32.26
+    Avg Trade Duration: 20.3 steps
+    Exit Reasons: {'reversal': 2, 'stop_loss': 4, 'manual': 1}
+  Date: 2025-07-21
+    Episode Reward: -3.68
+    Realized PnL: $-125.17
+    Max Drawdown: $-125.17
+    Trades: 6
+    Win Rate: 33.33%
+    Avg MAE: $42.76
+    Avg Trade Duration: 12.0 steps
+    Exit Reasons: {'stop_loss': 4, 'reversal': 2}
+  Date: 2025-07-22
+    Episode Reward: 0.24
+    Realized PnL: $79.51
+    Max Drawdown: $-82.92
+    Trades: 9
+    Win Rate: 66.67%
+    Avg MAE: $26.40
+    Avg Trade Duration: 21.7 steps
+    Exit Reasons: {'reversal': 3, 'stop_loss': 3, 'manual': 3}
+  Date: 2025-07-23
+    Episode Reward: -0.67
+    Realized PnL: $28.47
+    Max Drawdown: $0.00
+    Trades: 8
+    Win Rate: 50.00%
+    Avg MAE: $26.19
+    Avg Trade Duration: 21.6 steps
+    Exit Reasons: {'reversal': 3, 'stop_loss': 3, 'manual': 2}
+  Date: 2025-07-24
+    Episode Reward: -4.45
+    Realized PnL: $-144.92
+    Max Drawdown: $-150.10
+    Trades: 8
+    Win Rate: 25.00%
+    Avg MAE: $32.06
+    Avg Trade Duration: 14.4 steps
+    Exit Reasons: {'stop_loss': 4, 'reversal': 3, 'manual': 1}
+  Date: 2025-07-25
+    Episode Reward: 1.29
+    Realized PnL: $136.85
+    Max Drawdown: $-102.13
+    Trades: 8
+    Win Rate: 50.00%
+    Avg MAE: $42.43
+    Avg Trade Duration: 21.0 steps
+    Exit Reasons: {'reversal': 3, 'stop_loss': 4, 'manual': 1}
+  Date: 2025-07-28
+    Episode Reward: -0.35
+    Realized PnL: $82.09
+    Max Drawdown: $-124.94
+    Trades: 10
+    Win Rate: 50.00%
+    Avg MAE: $33.22
+    Avg Trade Duration: 21.5 steps
+    Exit Reasons: {'reversal': 7, 'stop_loss': 2, 'manual': 1}
+  Date: 2025-07-29
+    Episode Reward: -4.55
+    Realized PnL: $-156.04
+    Max Drawdown: $-196.21
+    Trades: 7
+    Win Rate: 28.57%
+    Avg MAE: $34.49
+    Avg Trade Duration: 16.0 steps
+    Exit Reasons: {'reversal': 2, 'stop_loss': 4, 'manual': 1}
+  Date: 2025-07-30
+    Episode Reward: -2.04
+    Realized PnL: $-20.55
+    Max Drawdown: $-160.20
+    Trades: 8
+    Win Rate: 25.00%
+    Avg MAE: $33.42
+    Avg Trade Duration: 20.9 steps
+    Exit Reasons: {'reversal': 3, 'stop_loss': 4, 'manual': 1}
+  Date: 2025-07-31
+    Episode Reward: -3.03
+    Realized PnL: $-76.77
+    Max Drawdown: $-99.69
+    Trades: 8
+    Win Rate: 37.50%
+    Avg MAE: $37.83
+    Avg Trade Duration: 18.9 steps
+    Exit Reasons: {'reversal': 4, 'stop_loss': 3, 'manual': 1}
+  Date: 2025-08-01
+    Episode Reward: -0.58
+    Realized PnL: $30.68
+    Max Drawdown: $-50.41
+    Trades: 8
+    Win Rate: 37.50%
+    Avg MAE: $28.68
+    Avg Trade Duration: 24.6 steps
+    Exit Reasons: {'reversal': 4, 'stop_loss': 3, 'manual': 1}
+  Date: 2025-08-04
+    Episode Reward: -0.32
+    Realized PnL: $45.79
+    Max Drawdown: $-101.22
+    Trades: 8
+    Win Rate: 37.50%
+    Avg MAE: $30.72
+    Avg Trade Duration: 14.4 steps
+    Exit Reasons: {'stop_loss': 4, 'reversal': 2, 'manual': 2}
+  Date: 2025-08-05
+    Episode Reward: -5.21
+    Realized PnL: $-169.78
+    Max Drawdown: $-169.78
+    Trades: 9
+    Win Rate: 22.22%
+    Avg MAE: $38.05
+    Avg Trade Duration: 14.7 steps
+    Exit Reasons: {'stop_loss': 4, 'reversal': 3, 'manual': 2}
+  Date: 2025-08-06
+    Episode Reward: -0.83
+    Realized PnL: $19.24
+    Max Drawdown: $-100.95
+    Trades: 8
+    Win Rate: 37.50%
+    Avg MAE: $33.09
+    Avg Trade Duration: 27.8 steps
+    Exit Reasons: {'reversal': 3, 'stop_loss': 4, 'max_duration': 1}
+  Date: 2025-08-07
+    Episode Reward: -0.89
+    Realized PnL: $16.78
+    Max Drawdown: $-100.92
+    Trades: 7
+    Win Rate: 42.86%
+    Avg MAE: $30.76
+    Avg Trade Duration: 18.7 steps
+    Exit Reasons: {'stop_loss': 4, 'reversal': 2, 'manual': 1}
+  Date: 2025-08-08
+    Episode Reward: 0.16
+    Realized PnL: $87.86
+    Max Drawdown: $-50.69
+    Trades: 10
+    Win Rate: 30.00%
+    Avg MAE: $29.13
+    Avg Trade Duration: 14.0 steps
+    Exit Reasons: {'reversal': 4, 'stop_loss': 4, 'manual': 2}
+  Date: 2025-08-11
+    Episode Reward: 5.19
+    Realized PnL: $341.12
+    Max Drawdown: $-51.97
+    Trades: 10
+    Win Rate: 60.00%
+    Avg MAE: $18.67
+    Avg Trade Duration: 28.3 steps
+    Exit Reasons: {'reversal': 5, 'manual': 3, 'stop_loss': 2}
+  Date: 2025-08-12
+    Episode Reward: -4.70
+    Realized PnL: $-155.38
+    Max Drawdown: $-192.78
+    Trades: 8
+    Win Rate: 37.50%
+    Avg MAE: $30.06
+    Avg Trade Duration: 12.6 steps
+    Exit Reasons: {'reversal': 4, 'stop_loss': 4}
+  Date: 2025-08-13
+    Episode Reward: 0.84
+    Realized PnL: $122.31
+    Max Drawdown: $0.00
+    Trades: 10
+    Win Rate: 60.00%
+    Avg MAE: $22.22
+    Avg Trade Duration: 15.0 steps
+    Exit Reasons: {'reversal': 6, 'stop_loss': 2, 'manual': 2}
+  Date: 2025-08-14
+    Episode Reward: 0.29
+    Realized PnL: $106.01
+    Max Drawdown: $-96.53
+    Trades: 9
+    Win Rate: 55.56%
+    Avg MAE: $36.86
+    Avg Trade Duration: 18.9 steps
+    Exit Reasons: {'reversal': 4, 'stop_loss': 4, 'manual': 1}
+  Date: 2025-08-15
+    Episode Reward: -1.41
+    Realized PnL: $7.37
+    Max Drawdown: $-96.83
+    Trades: 9
+    Win Rate: 44.44%
+    Avg MAE: $29.17
+    Avg Trade Duration: 21.1 steps
+    Exit Reasons: {'reversal': 4, 'manual': 2, 'stop_loss': 3}
+  Date: 2025-08-18
+    Episode Reward: 1.44
+    Realized PnL: $134.40
+    Max Drawdown: $0.00
+    Trades: 8
+    Win Rate: 75.00%
+    Avg MAE: $24.33
+    Avg Trade Duration: 19.2 steps
+    Exit Reasons: {'reversal': 3, 'stop_loss': 2, 'manual': 3}
+  Date: 2025-08-19
+    Episode Reward: -4.42
+    Realized PnL: $-157.13
+    Max Drawdown: $-173.04
+    Trades: 6
+    Win Rate: 33.33%
+    Avg MAE: $34.63
+    Avg Trade Duration: 15.8 steps
+    Exit Reasons: {'reversal': 2, 'stop_loss': 4}
+  Date: 2025-08-20
+    Episode Reward: -1.45
+    Realized PnL: $-19.16
+    Max Drawdown: $-50.15
+    Trades: 7
+    Win Rate: 42.86%
+    Avg MAE: $46.57
+    Avg Trade Duration: 14.1 steps
+    Exit Reasons: {'stop_loss': 4, 'reversal': 2, 'manual': 1}
+  Date: 2025-08-21
+    Episode Reward: -6.19
+    Realized PnL: $-217.47
+    Max Drawdown: $-217.47
+    Trades: 9
+    Win Rate: 22.22%
+    Avg MAE: $32.27
+    Avg Trade Duration: 17.4 steps
+    Exit Reasons: {'reversal': 4, 'stop_loss': 4, 'manual': 1}
+  Date: 2025-08-22
+    Episode Reward: 1.57
+    Realized PnL: $130.74
+    Max Drawdown: $-111.93
+    Trades: 9
+    Win Rate: 44.44%
+    Avg MAE: $25.26
+    Avg Trade Duration: 24.8 steps
+    Exit Reasons: {'reversal': 5, 'stop_loss': 3, 'max_duration': 1}
+  Date: 2025-08-25
+    Episode Reward: 2.23
+    Realized PnL: $188.39
+    Max Drawdown: $0.00
+    Trades: 10
+    Win Rate: 40.00%
+    Avg MAE: $25.37
+    Avg Trade Duration: 22.3 steps
+    Exit Reasons: {'reversal': 5, 'stop_loss': 3, 'manual': 2}
+  Date: 2025-08-26
+    Episode Reward: -5.96
+    Realized PnL: $-235.50
+    Max Drawdown: $-235.50
+    Trades: 6
+    Win Rate: 16.67%
+    Avg MAE: $45.82
+    Avg Trade Duration: 10.2 steps
+    Exit Reasons: {'stop_loss': 4, 'reversal': 2}
+  Date: 2025-08-27
+    Episode Reward: -4.22
+    Realized PnL: $-140.54
+    Max Drawdown: $-177.67
+    Trades: 6
+    Win Rate: 33.33%
+    Avg MAE: $44.19
+    Avg Trade Duration: 19.3 steps
+    Exit Reasons: {'manual': 1, 'stop_loss': 4, 'reversal': 1}
+  Date: 2025-08-28
+    Episode Reward: -5.43
+    Realized PnL: $-219.53
+    Max Drawdown: $-219.53
+    Trades: 6
+    Win Rate: 16.67%
+    Avg MAE: $41.34
+    Avg Trade Duration: 10.7 steps
+    Exit Reasons: {'reversal': 2, 'stop_loss': 4}
+  Date: 2025-08-29
+    Episode Reward: -5.83
+    Realized PnL: $-213.30
+    Max Drawdown: $-213.30
+    Trades: 7
+    Win Rate: 14.29%
+    Avg MAE: $35.86
+    Avg Trade Duration: 21.7 steps
+    Exit Reasons: {'manual': 1, 'reversal': 2, 'stop_loss': 4}
+  Date: 2025-09-01
+    Episode Reward: 1.46
+    Realized PnL: $159.91
+    Max Drawdown: $-29.73
+    Trades: 10
+    Win Rate: 40.00%
+    Avg MAE: $28.46
+    Avg Trade Duration: 33.3 steps
+    Exit Reasons: {'reversal': 4, 'manual': 4, 'stop_loss': 2}
+  Date: 2025-09-02
+    Episode Reward: -1.82
+    Realized PnL: $-36.49
+    Max Drawdown: $-50.07
+    Trades: 6
+    Win Rate: 33.33%
+    Avg MAE: $47.99
+    Avg Trade Duration: 22.8 steps
+    Exit Reasons: {'stop_loss': 4, 'max_duration': 1, 'reversal': 1}
+  Date: 2025-09-03
+    Episode Reward: -2.61
+    Realized PnL: $-55.63
+    Max Drawdown: $-124.99
+    Trades: 9
+    Win Rate: 33.33%
+    Avg MAE: $30.21
+    Avg Trade Duration: 16.8 steps
+    Exit Reasons: {'reversal': 3, 'stop_loss': 4, 'manual': 2}
+  Date: 2025-09-04
+    Episode Reward: -0.66
+    Realized PnL: $44.86
+    Max Drawdown: $-69.84
+    Trades: 10
+    Win Rate: 50.00%
+    Avg MAE: $23.02
+    Avg Trade Duration: 20.0 steps
+    Exit Reasons: {'reversal': 5, 'stop_loss': 3, 'manual': 2}
+  Date: 2025-09-05
+    Episode Reward: -3.32
+    Realized PnL: $-86.57
+    Max Drawdown: $-150.20
+    Trades: 8
+    Win Rate: 37.50%
+    Avg MAE: $39.41
+    Avg Trade Duration: 19.0 steps
+    Exit Reasons: {'reversal': 4, 'manual': 1, 'stop_loss': 3}
+  Date: 2025-09-08
+    Episode Reward: 2.79
+    Realized PnL: $211.69
+    Max Drawdown: $-19.21
+    Trades: 9
+    Win Rate: 66.67%
+    Avg MAE: $26.52
+    Avg Trade Duration: 28.7 steps
+    Exit Reasons: {'reversal': 3, 'stop_loss': 2, 'manual': 4}
+  Date: 2025-09-09
+    Episode Reward: -3.61
+    Realized PnL: $-120.81
+    Max Drawdown: $-169.97
+    Trades: 6
+    Win Rate: 33.33%
+    Avg MAE: $35.93
+    Avg Trade Duration: 15.3 steps
+    Exit Reasons: {'reversal': 2, 'stop_loss': 4}
+  Date: 2025-09-10
+    Episode Reward: -5.32
+    Realized PnL: $-187.55
+    Max Drawdown: $-187.55
+    Trades: 7
+    Win Rate: 0.00%
+    Avg MAE: $35.69
+    Avg Trade Duration: 13.7 steps
+    Exit Reasons: {'reversal': 4, 'stop_loss': 2, 'manual': 1}
+  Date: 2025-09-11
+    Episode Reward: 1.22
+    Realized PnL: $129.03
+    Max Drawdown: $-50.90
+    Trades: 8
+    Win Rate: 62.50%
+    Avg MAE: $28.12
+    Avg Trade Duration: 21.2 steps
+    Exit Reasons: {'reversal': 5, 'stop_loss': 2, 'manual': 1}
+  Date: 2025-09-12
+    Episode Reward: 4.29
+    Realized PnL: $292.44
+    Max Drawdown: $0.00
+    Trades: 10
+    Win Rate: 70.00%
+    Avg MAE: $19.35
+    Avg Trade Duration: 16.6 steps
+    Exit Reasons: {'reversal': 5, 'stop_loss': 2, 'manual': 3}
+  Date: 2025-09-15
+    Episode Reward: -6.43
+    Realized PnL: $-250.73
+    Max Drawdown: $-250.73
+    Trades: 6
+    Win Rate: 0.00%
+    Avg MAE: $44.07
+    Avg Trade Duration: 11.0 steps
+    Exit Reasons: {'stop_loss': 4, 'reversal': 2}
+  Date: 2025-09-16
+    Episode Reward: -1.54
+    Realized PnL: $-0.23
+    Max Drawdown: $-50.25
+    Trades: 9
+    Win Rate: 55.56%
+    Avg MAE: $24.59
+    Avg Trade Duration: 19.6 steps
+    Exit Reasons: {'stop_loss': 2, 'reversal': 4, 'manual': 3}
+  Date: 2025-09-17
+    Episode Reward: -0.20
+    Realized PnL: $83.37
+    Max Drawdown: $-50.67
+    Trades: 10
+    Win Rate: 50.00%
+    Avg MAE: $32.15
+    Avg Trade Duration: 18.9 steps
+    Exit Reasons: {'reversal': 5, 'stop_loss': 4, 'manual': 1}
+  Date: 2025-09-18
+    Episode Reward: -1.57
+    Realized PnL: $2.48
+    Max Drawdown: $-50.26
+    Trades: 10
+    Win Rate: 50.00%
+    Avg MAE: $28.32
+    Avg Trade Duration: 19.7 steps
+    Exit Reasons: {'reversal': 5, 'stop_loss': 3, 'manual': 2}
+  Date: 2025-09-19
+    Episode Reward: -1.59
+    Realized PnL: $9.50
+    Max Drawdown: $-151.94
+    Trades: 10
+    Win Rate: 50.00%
+    Avg MAE: $35.33
+    Avg Trade Duration: 17.5 steps
+    Exit Reasons: {'reversal': 4, 'manual': 2, 'stop_loss': 4}
+  Date: 2025-09-22
+    Episode Reward: 0.98
+    Realized PnL: $115.98
+    Max Drawdown: $-9.18
+    Trades: 10
+    Win Rate: 60.00%
+    Avg MAE: $22.63
+    Avg Trade Duration: 24.5 steps
+    Exit Reasons: {'reversal': 3, 'manual': 4, 'stop_loss': 3}
+  Date: 2025-09-23
+    Episode Reward: -0.06
+    Realized PnL: $95.57
+    Max Drawdown: $-50.73
+    Trades: 10
+    Win Rate: 60.00%
+    Avg MAE: $34.16
+    Avg Trade Duration: 27.0 steps
+    Exit Reasons: {'manual': 4, 'stop_loss': 4, 'reversal': 2}
+  Date: 2025-09-24
+    Episode Reward: 2.86
+    Realized PnL: $202.12
+    Max Drawdown: $-51.27
+    Trades: 8
+    Win Rate: 62.50%
+    Avg MAE: $25.42
+    Avg Trade Duration: 25.0 steps
+    Exit Reasons: {'manual': 2, 'reversal': 3, 'max_duration': 1, 'stop_loss': 2}
+  Date: 2025-09-25
+    Episode Reward: 10.05
+    Realized PnL: $556.96
+    Max Drawdown: $-53.05
+    Trades: 9
+    Win Rate: 66.67%
+    Avg MAE: $24.23
+    Avg Trade Duration: 20.2 steps
+    Exit Reasons: {'reversal': 5, 'stop_loss': 2, 'manual': 2}
+  Date: 2025-09-26
+    Episode Reward: -4.41
+    Realized PnL: $-165.20
+    Max Drawdown: $-199.18
+    Trades: 5
+    Win Rate: 20.00%
+    Avg MAE: $43.30
+    Avg Trade Duration: 25.0 steps
+    Exit Reasons: {'reversal': 1, 'stop_loss': 4}
+  Date: 2025-09-29
+    Episode Reward: -3.75
+    Realized PnL: $-150.36
+    Max Drawdown: $-199.48
+    Trades: 5
+    Win Rate: 20.00%
+    Avg MAE: $41.08
+    Avg Trade Duration: 8.8 steps
+    Exit Reasons: {'manual': 1, 'stop_loss': 4}
+  Date: 2025-09-30
+    Episode Reward: 1.32
+    Realized PnL: $133.88
+    Max Drawdown: $-50.92
+    Trades: 8
+    Win Rate: 62.50%
+    Avg MAE: $30.35
+    Avg Trade Duration: 20.0 steps
+    Exit Reasons: {'reversal': 5, 'stop_loss': 2, 'manual': 1}
+  Date: 2025-10-01
+    Episode Reward: 1.94
+    Realized PnL: $176.72
+    Max Drawdown: $-51.14
+    Trades: 10
+    Win Rate: 70.00%
+    Avg MAE: $31.72
+    Avg Trade Duration: 22.5 steps
+    Exit Reasons: {'reversal': 5, 'stop_loss': 3, 'manual': 2}
+  Date: 2025-10-02
+    Episode Reward: -4.09
+    Realized PnL: $-163.33
+    Max Drawdown: $-163.33
+    Trades: 5
+    Win Rate: 20.00%
+    Avg MAE: $38.54
+    Avg Trade Duration: 10.4 steps
+    Exit Reasons: {'stop_loss': 4, 'manual': 1}
+  Date: 2025-10-03
+    Episode Reward: 0.22
+    Realized PnL: $85.22
+    Max Drawdown: $-68.64
+    Trades: 9
+    Win Rate: 44.44%
+    Avg MAE: $27.79
+    Avg Trade Duration: 17.8 steps
+    Exit Reasons: {'reversal': 3, 'manual': 2, 'stop_loss': 4}
+  Date: 2025-10-06
+    Episode Reward: -3.20
+    Realized PnL: $-107.69
+    Max Drawdown: $-200.34
+    Trades: 5
+    Win Rate: 20.00%
+    Avg MAE: $41.46
+    Avg Trade Duration: 17.8 steps
+    Exit Reasons: {'reversal': 1, 'stop_loss': 4}
+  Date: 2025-10-07
+    Episode Reward: -5.17
+    Realized PnL: $-181.87
+    Max Drawdown: $-200.18
+    Trades: 8
+    Win Rate: 25.00%
+    Avg MAE: $42.05
+    Avg Trade Duration: 15.5 steps
+    Exit Reasons: {'reversal': 2, 'stop_loss': 4, 'manual': 2}
+  Date: 2025-10-08
+    Episode Reward: -6.17
+    Realized PnL: $-242.41
+    Max Drawdown: $-242.41
+    Trades: 6
+    Win Rate: 16.67%
+    Avg MAE: $44.27
+    Avg Trade Duration: 11.2 steps
+    Exit Reasons: {'stop_loss': 4, 'reversal': 2}
+  Date: 2025-10-09
+    Episode Reward: -4.12
+    Realized PnL: $-128.37
+    Max Drawdown: $-128.37
+    Trades: 9
+    Win Rate: 33.33%
+    Avg MAE: $33.32
+    Avg Trade Duration: 20.7 steps
+    Exit Reasons: {'stop_loss': 4, 'manual': 3, 'reversal': 2}
+  Date: 2025-10-10
+    Episode Reward: 0.67
+    Realized PnL: $117.29
+    Max Drawdown: $-60.18
+    Trades: 10
+    Win Rate: 40.00%
+    Avg MAE: $31.73
+    Avg Trade Duration: 22.2 steps
+    Exit Reasons: {'stop_loss': 4, 'reversal': 4, 'manual': 2}
+  Date: 2025-10-13
+    Episode Reward: -1.89
+    Realized PnL: $-30.43
+    Max Drawdown: $-44.06
+    Trades: 8
+    Win Rate: 37.50%
+    Avg MAE: $31.24
+    Avg Trade Duration: 27.2 steps
+    Exit Reasons: {'stop_loss': 3, 'reversal': 3, 'manual': 1, 'max_duration': 1}
+  Date: 2025-10-14
+    Episode Reward: -5.11
+    Realized PnL: $-197.82
+    Max Drawdown: $-197.82
+    Trades: 5
+    Win Rate: 20.00%
+    Avg MAE: $53.38
+    Avg Trade Duration: 26.4 steps
+    Exit Reasons: {'stop_loss': 4, 'reversal': 1}
+  Date: 2025-10-15
+    Episode Reward: 12.59
+    Realized PnL: $674.52
+    Max Drawdown: $0.00
+    Trades: 10
+    Win Rate: 80.00%
+    Avg MAE: $18.82
+    Avg Trade Duration: 23.7 steps
+    Exit Reasons: {'reversal': 4, 'manual': 5, 'stop_loss': 1}
+  Date: 2025-10-16
+    Episode Reward: -2.32
+    Realized PnL: $-41.24
+    Max Drawdown: $-108.63
+    Trades: 9
+    Win Rate: 44.44%
+    Avg MAE: $27.63
+    Avg Trade Duration: 18.2 steps
+    Exit Reasons: {'reversal': 4, 'stop_loss': 4, 'manual': 1}
+  Date: 2025-10-17
+    Episode Reward: -1.38
+    Realized PnL: $-24.03
+    Max Drawdown: $-91.67
+    Trades: 5
+    Win Rate: 20.00%
+    Avg MAE: $31.59
+    Avg Trade Duration: 39.6 steps
+    Exit Reasons: {'reversal': 2, 'manual': 1, 'stop_loss': 1, 'max_duration': 1}
+  Date: 2025-10-20
+    Episode Reward: -1.71
+    Realized PnL: $-18.09
+    Max Drawdown: $-30.60
+    Trades: 8
+    Win Rate: 25.00%
+    Avg MAE: $32.53
+    Avg Trade Duration: 33.6 steps
+    Exit Reasons: {'reversal': 3, 'stop_loss': 3, 'manual': 1, 'max_duration': 1}
+  Date: 2025-10-21
+    Episode Reward: -4.85
+    Realized PnL: $-148.42
+    Max Drawdown: $-158.18
+    Trades: 9
+    Win Rate: 33.33%
+    Avg MAE: $34.66
+    Avg Trade Duration: 20.8 steps
+    Exit Reasons: {'reversal': 5, 'stop_loss': 4}
+  Date: 2025-10-22
+    Episode Reward: -1.16
+    Realized PnL: $8.35
+    Max Drawdown: $-72.37
+    Trades: 9
+    Win Rate: 44.44%
+    Avg MAE: $27.40
+    Avg Trade Duration: 20.7 steps
+    Exit Reasons: {'reversal': 3, 'stop_loss': 3, 'manual': 3}
+  Date: 2025-10-23
+    Episode Reward: -2.02
+    Realized PnL: $-34.69
+    Max Drawdown: $-72.40
+    Trades: 8
+    Win Rate: 37.50%
+    Avg MAE: $33.83
+    Avg Trade Duration: 26.6 steps
+    Exit Reasons: {'reversal': 3, 'stop_loss': 4, 'max_duration': 1}
+  Date: 2025-10-24
+    Episode Reward: -4.91
+    Realized PnL: $-157.97
+    Max Drawdown: $-178.36
+    Trades: 9
+    Win Rate: 33.33%
+    Avg MAE: $36.80
+    Avg Trade Duration: 14.3 steps
+    Exit Reasons: {'reversal': 3, 'manual': 2, 'stop_loss': 4}
+  Date: 2025-10-27
+    Episode Reward: 0.51
+    Realized PnL: $89.15
+    Max Drawdown: $-101.65
+    Trades: 9
+    Win Rate: 55.56%
+    Avg MAE: $25.80
+    Avg Trade Duration: 19.0 steps
+    Exit Reasons: {'reversal': 4, 'manual': 2, 'stop_loss': 3}
+  Date: 2025-10-28
+    Episode Reward: 1.55
+    Realized PnL: $142.43
+    Max Drawdown: $-93.37
+    Trades: 8
+    Win Rate: 62.50%
+    Avg MAE: $28.06
+    Avg Trade Duration: 27.6 steps
+    Exit Reasons: {'manual': 2, 'reversal': 4, 'stop_loss': 2}
+  Date: 2025-10-29
+    Episode Reward: 0.11
+    Realized PnL: $98.00
+    Max Drawdown: $0.00
+    Trades: 10
+    Win Rate: 60.00%
+    Avg MAE: $28.52
+    Avg Trade Duration: 31.2 steps
+    Exit Reasons: {'reversal': 5, 'stop_loss': 3, 'max_duration': 1, 'manual': 1}
+  Date: 2025-10-30
+    Episode Reward: -3.76
+    Realized PnL: $-135.07
+    Max Drawdown: $-135.07
+    Trades: 6
+    Win Rate: 16.67%
+    Avg MAE: $38.39
+    Avg Trade Duration: 18.7 steps
+    Exit Reasons: {'stop_loss': 4, 'reversal': 1, 'manual': 1}
+  Date: 2025-10-31
+    Episode Reward: -1.18
+    Realized PnL: $9.41
+    Max Drawdown: $-50.30
+    Trades: 8
+    Win Rate: 50.00%
+    Avg MAE: $34.84
+    Avg Trade Duration: 18.8 steps
+    Exit Reasons: {'stop_loss': 4, 'manual': 2, 'reversal': 2}
+  Date: 2025-11-03
+    Episode Reward: -3.13
+    Realized PnL: $-79.74
+    Max Drawdown: $-189.04
+    Trades: 8
+    Win Rate: 37.50%
+    Avg MAE: $39.00
+    Avg Trade Duration: 24.0 steps
+    Exit Reasons: {'reversal': 3, 'stop_loss': 4, 'manual': 1}
+  Date: 2025-11-04
+    Episode Reward: 0.69
+    Realized PnL: $150.36
+    Max Drawdown: $-51.01
+    Trades: 6
+    Win Rate: 33.33%
+    Avg MAE: $40.45
+    Avg Trade Duration: 28.7 steps
+    Exit Reasons: {'stop_loss': 4, 'manual': 1, 'reversal': 1}
+  Date: 2025-11-05
+    Episode Reward: -4.88
+    Realized PnL: $-198.50
+    Max Drawdown: $-198.50
+    Trades: 4
+    Win Rate: 0.00%
+    Avg MAE: $53.71
+    Avg Trade Duration: 18.5 steps
+    Exit Reasons: {'stop_loss': 4}
+  Date: 2025-11-06
+    Episode Reward: 1.07
+    Realized PnL: $123.95
+    Max Drawdown: $0.00
+    Trades: 10
+    Win Rate: 70.00%
+    Avg MAE: $26.56
+    Avg Trade Duration: 21.8 steps
+    Exit Reasons: {'stop_loss': 3, 'reversal': 5, 'manual': 2}
+  Date: 2025-11-07
+    Episode Reward: -1.00
+    Realized PnL: $10.05
+    Max Drawdown: $0.00
+    Trades: 8
+    Win Rate: 62.50%
+    Avg MAE: $27.64
+    Avg Trade Duration: 27.2 steps
+    Exit Reasons: {'reversal': 3, 'stop_loss': 3, 'manual': 1, 'max_duration': 1}
+  Date: 2025-11-10
+    Episode Reward: -0.01
+    Realized PnL: $72.37
+    Max Drawdown: $-50.61
+    Trades: 10
+    Win Rate: 60.00%
+    Avg MAE: $25.08
+    Avg Trade Duration: 23.8 steps
+    Exit Reasons: {'reversal': 6, 'manual': 3, 'stop_loss': 1}
+  Date: 2025-11-11
+    Episode Reward: -0.67
+    Realized PnL: $20.20
+    Max Drawdown: $-95.85
+    Trades: 7
+    Win Rate: 71.43%
+    Avg MAE: $30.09
+    Avg Trade Duration: 25.7 steps
+    Exit Reasons: {'reversal': 3, 'manual': 2, 'stop_loss': 2}
+  Date: 2025-11-12
+    Episode Reward: 3.09
+    Realized PnL: $208.83
+    Max Drawdown: $-102.86
+    Trades: 8
+    Win Rate: 50.00%
+    Avg MAE: $25.05
+    Avg Trade Duration: 19.8 steps
+    Exit Reasons: {'reversal': 4, 'manual': 2, 'stop_loss': 2}
+  Date: 2025-11-13
+    Episode Reward: -4.66
+    Realized PnL: $-170.00
+    Max Drawdown: $-170.00
+    Trades: 7
+    Win Rate: 28.57%
+    Avg MAE: $35.07
+    Avg Trade Duration: 17.7 steps
+    Exit Reasons: {'stop_loss': 4, 'manual': 1, 'reversal': 2}
+  Date: 2025-11-14
+    Episode Reward: -1.40
+    Realized PnL: $-7.92
+    Max Drawdown: $-95.34
+    Trades: 8
+    Win Rate: 50.00%
+    Avg MAE: $27.14
+    Avg Trade Duration: 20.4 steps
+    Exit Reasons: {'reversal': 4, 'manual': 3, 'stop_loss': 1}
+  Date: 2025-11-17
+    Episode Reward: 1.59
+    Realized PnL: $143.74
+    Max Drawdown: $-50.97
+    Trades: 9
+    Win Rate: 66.67%
+    Avg MAE: $19.46
+    Avg Trade Duration: 29.4 steps
+    Exit Reasons: {'reversal': 5, 'manual': 2, 'stop_loss': 2}
+  Date: 2025-11-18
+    Episode Reward: -4.80
+    Realized PnL: $-189.97
+    Max Drawdown: $-189.97
+    Trades: 5
+    Win Rate: 20.00%
+    Avg MAE: $56.67
+    Avg Trade Duration: 13.4 steps
+    Exit Reasons: {'stop_loss': 4, 'manual': 1}
+  Date: 2025-11-19
+    Episode Reward: 0.22
+    Realized PnL: $56.11
+    Max Drawdown: $-50.53
+    Trades: 6
+    Win Rate: 33.33%
+    Avg MAE: $31.16
+    Avg Trade Duration: 37.3 steps
+    Exit Reasons: {'reversal': 2, 'stop_loss': 2, 'manual': 1, 'max_duration': 1}
+  Date: 2025-11-20
+    Episode Reward: 2.86
+    Realized PnL: $205.49
+    Max Drawdown: $0.00
+    Trades: 9
+    Win Rate: 55.56%
+    Avg MAE: $23.18
+    Avg Trade Duration: 27.2 steps
+    Exit Reasons: {'reversal': 5, 'manual': 2, 'stop_loss': 2}
+  Date: 2025-11-21
+    Episode Reward: 0.29
+    Realized PnL: $59.85
+    Max Drawdown: $-16.39
+    Trades: 8
+    Win Rate: 37.50%
+    Avg MAE: $28.29
+    Avg Trade Duration: 27.1 steps
+    Exit Reasons: {'reversal': 2, 'manual': 3, 'stop_loss': 2, 'max_duration': 1}
+  Date: 2025-11-24
+    Episode Reward: -6.51
+    Realized PnL: $-252.20
+    Max Drawdown: $-252.20
+    Trades: 7
+    Win Rate: 0.00%
+    Avg MAE: $40.48
+    Avg Trade Duration: 15.0 steps
+    Exit Reasons: {'stop_loss': 4, 'manual': 1, 'reversal': 2}
+  Date: 2025-11-25
+    Episode Reward: -4.59
+    Realized PnL: $-170.47
+    Max Drawdown: $-170.47
+    Trades: 6
+    Win Rate: 16.67%
+    Avg MAE: $35.88
+    Avg Trade Duration: 16.0 steps
+    Exit Reasons: {'stop_loss': 4, 'reversal': 2}
+  Date: 2025-11-26
+    Episode Reward: 4.94
+    Realized PnL: $297.04
+    Max Drawdown: $0.00
+    Trades: 9
+    Win Rate: 55.56%
+    Avg MAE: $28.23
+    Avg Trade Duration: 38.4 steps
+    Exit Reasons: {'stop_loss': 3, 'reversal': 2, 'manual': 3, 'max_duration': 1}
+  Date: 2025-11-27
+    Episode Reward: -2.88
+    Realized PnL: $-58.69
+    Max Drawdown: $-142.21
+    Trades: 9
+    Win Rate: 33.33%
+    Avg MAE: $34.54
+    Avg Trade Duration: 17.8 steps
+    Exit Reasons: {'reversal': 4, 'stop_loss': 4, 'manual': 1}
+  Date: 2025-11-28
+    Episode Reward: 1.41
+    Realized PnL: $85.33
+    Max Drawdown: $0.00
+    Trades: 3
+    Win Rate: 100.00%
+    Avg MAE: $10.08
+    Avg Trade Duration: 19.3 steps
+    Exit Reasons: {'reversal': 2, 'manual': 1}
+  Date: 2025-12-01
+    Episode Reward: -2.19
+    Realized PnL: $-51.19
+    Max Drawdown: $-51.19
+    Trades: 7
+    Win Rate: 42.86%
+    Avg MAE: $33.15
+    Avg Trade Duration: 16.1 steps
+    Exit Reasons: {'stop_loss': 4, 'manual': 1, 'reversal': 2}
+  Date: 2025-12-02
+    Episode Reward: -1.40
+    Realized PnL: $10.43
+    Max Drawdown: $-134.13
+    Trades: 10
+    Win Rate: 50.00%
+    Avg MAE: $26.75
+    Avg Trade Duration: 16.8 steps
+    Exit Reasons: {'reversal': 5, 'manual': 2, 'stop_loss': 3}
+  Date: 2025-12-03
+    Episode Reward: 1.84
+    Realized PnL: $170.63
+    Max Drawdown: $-68.99
+    Trades: 10
+    Win Rate: 50.00%
+    Avg MAE: $34.65
+    Avg Trade Duration: 31.4 steps
+    Exit Reasons: {'stop_loss': 4, 'reversal': 3, 'max_duration': 2, 'manual': 1}
+  Date: 2025-12-04
+    Episode Reward: -4.78
+    Realized PnL: $-161.78
+    Max Drawdown: $-164.51
+    Trades: 7
+    Win Rate: 42.86%
+    Avg MAE: $47.66
+    Avg Trade Duration: 21.3 steps
+    Exit Reasons: {'reversal': 2, 'stop_loss': 4, 'manual': 1}
+  Date: 2025-12-05
+    Episode Reward: 2.11
+    Realized PnL: $178.77
+    Max Drawdown: $-51.15
+    Trades: 10
+    Win Rate: 60.00%
+    Avg MAE: $22.67
+    Avg Trade Duration: 18.2 steps
+    Exit Reasons: {'manual': 3, 'stop_loss': 2, 'reversal': 5}
+  Date: 2025-12-08
+    Episode Reward: 0.51
+    Realized PnL: $102.46
+    Max Drawdown: $-182.17
+    Trades: 9
+    Win Rate: 55.56%
+    Avg MAE: $40.19
+    Avg Trade Duration: 26.3 steps
+    Exit Reasons: {'reversal': 4, 'max_duration': 1, 'stop_loss': 4}
+  Date: 2025-12-09
+    Episode Reward: -0.89
+    Realized PnL: $17.93
+    Max Drawdown: $-50.34
+    Trades: 9
+    Win Rate: 44.44%
+    Avg MAE: $28.79
+    Avg Trade Duration: 23.8 steps
+    Exit Reasons: {'reversal': 4, 'stop_loss': 4, 'max_duration': 1}
+  Date: 2025-12-10
+    Episode Reward: -0.20
+    Realized PnL: $61.13
+    Max Drawdown: $-50.56
+    Trades: 10
+    Win Rate: 50.00%
+    Avg MAE: $25.65
+    Avg Trade Duration: 16.5 steps
+    Exit Reasons: {'reversal': 6, 'stop_loss': 3, 'manual': 1}
+  Date: 2025-12-11
+    Episode Reward: -4.59
+    Realized PnL: $-172.96
+    Max Drawdown: $-192.32
+    Trades: 6
+    Win Rate: 33.33%
+    Avg MAE: $46.39
+    Avg Trade Duration: 15.2 steps
+    Exit Reasons: {'reversal': 2, 'stop_loss': 4}
+  Date: 2025-12-12
+    Episode Reward: -5.55
+    Realized PnL: $-196.02
+    Max Drawdown: $-244.88
+    Trades: 7
+    Win Rate: 14.29%
+    Avg MAE: $40.07
+    Avg Trade Duration: 22.3 steps
+    Exit Reasons: {'reversal': 3, 'stop_loss': 4}
+  Date: 2025-12-15
+    Episode Reward: -2.44
+    Realized PnL: $-65.46
+    Max Drawdown: $-150.52
+    Trades: 6
+    Win Rate: 33.33%
+    Avg MAE: $40.94
+    Avg Trade Duration: 21.3 steps
+    Exit Reasons: {'stop_loss': 4, 'manual': 2}
+  Date: 2025-12-16
+    Episode Reward: -2.49
+    Realized PnL: $-62.28
+    Max Drawdown: $-62.28
+    Trades: 7
+    Win Rate: 28.57%
+    Avg MAE: $37.31
+    Avg Trade Duration: 30.7 steps
+    Exit Reasons: {'stop_loss': 4, 'reversal': 2, 'manual': 1}
+  Date: 2025-12-17
+    Episode Reward: -1.85
+    Realized PnL: $-53.86
+    Max Drawdown: $-133.65
+    Trades: 7
+    Win Rate: 42.86%
+    Avg MAE: $25.56
+    Avg Trade Duration: 17.4 steps
+    Exit Reasons: {'reversal': 4, 'stop_loss': 2, 'manual': 1}
+  Date: 2025-12-18
+    Episode Reward: -0.76
+    Realized PnL: $14.48
+    Max Drawdown: $-111.28
+    Trades: 8
+    Win Rate: 50.00%
+    Avg MAE: $23.57
+    Avg Trade Duration: 19.9 steps
+    Exit Reasons: {'reversal': 4, 'manual': 2, 'stop_loss': 2}
+  Date: 2025-12-19
+    Episode Reward: -2.20
+    Realized PnL: $-52.20
+    Max Drawdown: $-131.61
+    Trades: 7
+    Win Rate: 42.86%
+    Avg MAE: $32.15
+    Avg Trade Duration: 18.4 steps
+    Exit Reasons: {'manual': 1, 'reversal': 2, 'stop_loss': 4}
+  Date: 2025-12-22
+    Episode Reward: -2.63
+    Realized PnL: $-49.08
+    Max Drawdown: $-140.69
+    Trades: 8
+    Win Rate: 25.00%
+    Avg MAE: $34.54
+    Avg Trade Duration: 19.0 steps
+    Exit Reasons: {'reversal': 5, 'manual': 2, 'stop_loss': 1}
+  Date: 2025-12-23
+    Episode Reward: -5.54
+    Realized PnL: $-226.91
+    Max Drawdown: $-226.91
+    Trades: 5
+    Win Rate: 0.00%
+    Avg MAE: $40.94
+    Avg Trade Duration: 14.4 steps
+    Exit Reasons: {'stop_loss': 4, 'reversal': 1}
+  Date: 2025-12-24
+    Episode Reward: -6.01
+    Realized PnL: $-206.24
+    Max Drawdown: $-207.35
+    Trades: 7
+    Win Rate: 14.29%
+    Avg MAE: $39.46
+    Avg Trade Duration: 27.6 steps
+    Exit Reasons: {'reversal': 3, 'stop_loss': 4}
+  Date: 2025-12-26
+    Episode Reward: 0.81
+    Realized PnL: $112.53
+    Max Drawdown: $-18.78
+    Trades: 9
+    Win Rate: 44.44%
+    Avg MAE: $18.76
+    Avg Trade Duration: 29.1 steps
+    Exit Reasons: {'reversal': 5, 'manual': 1, 'stop_loss': 2, 'max_duration': 1}
+  Date: 2025-12-29
+    Episode Reward: -5.07
+    Realized PnL: $-203.65
+    Max Drawdown: $-203.65
+    Trades: 5
+    Win Rate: 0.00%
+    Avg MAE: $43.39
+    Avg Trade Duration: 8.8 steps
+    Exit Reasons: {'stop_loss': 4, 'reversal': 1}
+  Date: 2025-12-30
+    Episode Reward: -1.95
+    Realized PnL: $-9.91
+    Max Drawdown: $-9.91
+    Trades: 10
+    Win Rate: 50.00%
+    Avg MAE: $30.89
+    Avg Trade Duration: 17.3 steps
+    Exit Reasons: {'stop_loss': 3, 'reversal': 6, 'manual': 1}
+  Date: 2025-12-31
+    Episode Reward: 2.61
+    Realized PnL: $199.00
+    Max Drawdown: $-51.25
+    Trades: 10
+    Win Rate: 40.00%
+    Avg MAE: $25.44
+    Avg Trade Duration: 18.6 steps
+    Exit Reasons: {'stop_loss': 3, 'reversal': 5, 'manual': 2}
+
+Trade Export: 2007 trades saved to models\trade_logs\all_test_trades.csv
+
+================================================================================
+Final Test PERFORMANCE SUMMARY
+================================================================================
+
+--- Trading Activity ---
+Trading Days: 259
+Total Trades: 2007
+Avg Trades/Day: 7.7
+
+--- Daily P&L Performance ---
+Total P&L: $225.98
+Average Daily P&L: $0.87
+Best Day: $674.52
+Worst Day: $-252.20
+Daily P&L Std Dev: $169.15
+
+--- Win/Loss Statistics ---
+Winning Days: 117 (45.2%)
+Losing Days: 141
+Average Win: $149.97
+Average Loss: $-122.84
+Profit Factor: 1.01
+Max Consecutive Wins: 7
+Max Consecutive Losses: 10
+
+--- Risk Metrics ---
+Daily Starting Capital: $10,000.00 (resets each day)
+Cumulative P&L: $225.98
+Peak Cumulative P&L: $2,679.03
+Max Drawdown (from cumulative peak): $2,959.17
+Current Drawdown: $2,453.06
+Max Intraday DD (single day): $-252.20
+Sharpe Ratio (annualized): 0.08
+================================================================================
+
+
+================================================================================
+EXPERIMENT-009 DIAGNOSTICS - TEST 2025 CALENDAR-MONTH DRAWDOWN
+================================================================================
+
+Month               PnL      Peak-DD    Worst Day    Worst Intra   Trades   StopLoss   Manual   Cap-Hit
+------------------------------------------------------------------------------------------------------------
+2025-01    $     436.29 $    -517.27 $    -244.00 $      -244.00      172         68      101         5
+2025-02    $    1899.68 $    -343.06 $    -193.58 $      -199.67      155         53       96         4
+2025-03    $   -1215.07 $   -1391.68 $    -235.75 $      -235.75      155         68       84         3
+2025-04    $    -432.54 $    -561.45 $    -230.65 $      -230.65      158         68       84         2
+2025-05    $     901.12 $    -591.81 $    -198.50 $      -242.65      172         68      102         5
+2025-06    $    -320.62 $    -727.89 $    -223.54 $      -223.54      161         68       92         2
+2025-07    $   -1181.30 $   -1181.30 $    -198.50 $      -198.50      177         83       94         2
+2025-08    $    -297.11 $    -883.50 $    -235.50 $      -235.50      170         74       94         4
+2025-09    $     984.23 $    -315.56 $    -250.73 $      -250.73      183         66      115         8
+2025-10    $    -210.35 $    -849.42 $    -242.41 $      -242.41      183         78      100         4
+2025-11    $     305.83 $    -422.68 $    -252.20 $      -252.20      147         55       88         2
+2025-12    $    -644.19 $   -1171.57 $    -226.91 $      -244.88      174         73       96         6
+================================================================================
+
+================================================================================
+EXPERIMENT-009 DIAGNOSTICS - TOP-10 WORST TEST DAYS (by PnL)
+================================================================================
+
+Date                  PnL     Intra DD   Trades   StopLoss   Manual    Avg MAE    Avg Dur
+------------------------------------------------------------------------------------------------
+2025-11-24   $    -252.20 $    -252.20        7          4        3 $    40.48       15.0
+2025-09-15   $    -250.73 $    -250.73        6          4        2 $    44.07       11.0
+2025-01-15   $    -244.00 $    -244.00        6          4        2 $    44.95       12.2
+2025-10-08   $    -242.41 $    -242.41        6          4        2 $    44.27       11.2
+2025-03-07   $    -235.75 $    -235.75        5          4        1 $    41.28       12.8
+2025-08-26   $    -235.50 $    -235.50        6          4        2 $    45.82       10.2
+2025-04-25   $    -230.65 $    -230.65        9          4        5 $    30.41       15.7
+2025-03-10   $    -228.41 $    -228.41        5          4        1 $    51.43       29.8
+2025-12-23   $    -226.91 $    -226.91        5          4        1 $    40.94       14.4
+2025-06-17   $    -223.54 $    -223.54        8          4        4 $    32.58       12.1
+================================================================================
+
+================================================================================
+EXPERIMENT-009 DIAGNOSTICS - REWARD COMPONENT AGGREGATES
+================================================================================
+
+--- Train 2021-2024 Reward Components ---
+Component                                  Sum    Mean/Episode
+------------------------------------------------------------
+action_penalty                         -327.20         -0.3161
+daily_dd_penalty                          0.00          0.0000
+duration_penalty                       -159.78         -0.1544
+early_exit_penalty                        0.00          0.0000
+entry_cost                              -92.50         -0.0894
+execution_penalty                      -370.00         -0.3575
+high_r_bonus                             42.49          0.0411
+inactivity_baseline                     285.16          0.2755
+mae_penalty                            -698.41         -0.6748
+overtrading_penalty                       0.00          0.0000
+patience_reward                          23.69          0.0229
+reversal_event_penalty                  -90.06         -0.0870
+stoploss_event_penalty                 -156.75         -0.1514
+tiny_win_penalty                        -12.52         -0.0121
+trade_reward                            152.77          0.1476
+unused_budget_penalty                     0.00          0.0000
+
+--- Test 2025 Reward Components ---
+Component                                  Sum    Mean/Episode
+------------------------------------------------------------
+action_penalty                          -46.11         -0.1780
+daily_dd_penalty                          0.00          0.0000
+duration_penalty                        -43.17         -0.1667
+early_exit_penalty                        0.00          0.0000
+entry_cost                              -20.07         -0.0775
+execution_penalty                       -80.28         -0.3100
+high_r_bonus                             17.30          0.0668
+inactivity_baseline                      72.05          0.2782
+mae_penalty                            -172.82         -0.6672
+overtrading_penalty                       0.00          0.0000
+patience_reward                           5.07          0.0196
+reversal_event_penalty                  -23.67         -0.0914
+stoploss_event_penalty                  -41.10         -0.1587
+tiny_win_penalty                         -2.28         -0.0088
+trade_reward                              4.10          0.0158
+unused_budget_penalty                     0.00          0.0000
+
+--- Train vs Test Reward Components (Mean/Episode) ---
+Component                                Train            Test           Delta
+---------------------------------------------------------------------------
+action_penalty                         -0.3161         -0.1780          0.1381
+daily_dd_penalty                        0.0000          0.0000          0.0000
+duration_penalty                       -0.1544         -0.1667         -0.0123
+early_exit_penalty                      0.0000          0.0000          0.0000
+entry_cost                             -0.0894         -0.0775          0.0119
+execution_penalty                      -0.3575         -0.3100          0.0475
+high_r_bonus                            0.0411          0.0668          0.0257
+inactivity_baseline                     0.2755          0.2782          0.0027
+mae_penalty                            -0.6748         -0.6672          0.0075
+overtrading_penalty                     0.0000          0.0000          0.0000
+patience_reward                         0.0229          0.0196         -0.0033
+reversal_event_penalty                 -0.0870         -0.0914         -0.0044
+stoploss_event_penalty                 -0.1514         -0.1587         -0.0072
+tiny_win_penalty                       -0.0121         -0.0088          0.0033
+trade_reward                            0.1476          0.0158         -0.1318
+unused_budget_penalty                   0.0000          0.0000          0.0000
+================================================================================
+
+================================================================================
+EXPERIMENT-010 DIAGNOSTICS - TRADE PATTERNS & BEHAVIOR (TEST 2025)
+================================================================================
+
+--- Test Trades/Day Histogram ---
+Trades/Day      Count   Percentage
+--------------------------------
+0                   0         0.0%
+1-2                 0         0.0%
+3-5                28        10.8%
+6-8               137        52.9%
+9-10               94        36.3%
+11+                 0         0.0%
+
+Mean trades/day: 7.75
+Median trades/day: 8.0
+
+--- Trade Duration Analysis (Test) ---
+
+Overall Trade Duration (bars):
+  Total trades: 2007
+  p10: 5.0
+  p50 (median): 16.0
+  p90: 38.0
+  mean: 20.8
+
+Duration by Exit Reason:
+Reason             Count      p10      p50      p90     Mean
+---------------------------------------------------------------
+end_of_day             1      0.0      0.0      0.0      0.0
+manual               357     15.0     23.0     46.4     28.2
+max_duration          38     90.0     90.0     90.0     90.0
+reversal             789     15.0     17.0     33.0     20.9
+stop_loss            822      3.0     10.5     30.0     14.3
+
+--- Trade-Level Win Rate (Test) ---
+  Total trades: 2007
+  Winning trades: 850
+  Losing trades: 1147
+  Breakeven trades: 10
+  Trade-level win rate: 42.35%
+  Avg win: $55.57
+  Avg loss: $-40.98
+  Win/Loss ratio: 1.36
+================================================================================
+
+================================================================================
+EXPERIMENT-011 DIAGNOSTICS - REGIME & STOP INTENSITY SLICES (TEST 2025)
+================================================================================
+
+--- Stop-Loss Intensity Histogram (Test) ---
+Days bucketed by number of stop-loss exits per day
+SL Exits/Day        Days        %    Mean PnL/Day   Mean Intraday DD
+------------------------------------------------------------------------
+0                      5     1.9% $       218.61 $             0.00
+1-2                   64    24.7% $       162.58 $           -43.26
+3-5                  190    73.4% $       -59.33 $          -131.22
+6-8                    0     0.0% $         0.00 $             0.00
+9-10+                  0     0.0% $         0.00 $             0.00
+
+--- Volatility Quintile Analysis (Test) ---
+Days bucketed by mean ATR_norm (volatility score)
+Quintile     Days    Total PnL   Avg PnL/Day     PF   Trades/Day   SL/Day  Rev/Day    Worst DD
+------------------------------------------------------------------------------------------------------------
+Q1             51 $     399.90 $        7.84   1.13          8.0      3.1      3.2 $   -250.73
+Q2             51 $     802.65 $       15.74   1.24          8.1      3.2      3.4 $   -235.50
+Q3             51 $     248.70 $        4.88   1.08          8.0      3.1      3.2 $   -244.00
+Q4             51 $     692.36 $       13.58   1.22          7.5      3.3      2.9 $   -244.88
+Q5             55 $   -1917.62 $      -34.87   0.60          7.1      3.1      2.6 $   -252.20
+
+--- Session Slice Summary (Test) --- [DEPRECATED: see EXP-014 entries-by-session below]
+NOTE: This session attribution uses entry_bar which may not reflect actual execution bar.
+      The EXPERIMENT-014 diagnostics section below uses trade_record['entry_session'] for
+      accurate attribution. Do not use this table for session performance conclusions.
+Note: Session flags from features; bar-level mapping; priority: NY > London > Asia if multiple flags.
+Session        Trades    Stop-Loss   Reversal
+------------------------------------------
+Asia              761          312        298
+London            698          282        294
+NY                548          228        197
+================================================================================
+
+================================================================================
+EXPERIMENT-012 DIAGNOSTICS - ACTION DISTRIBUTION + BLOCKED ACTIONS
+================================================================================
+
+--- Test 2025 Action Distribution ---
+
+Action                    Count        %
+--------------------------------------
+HOLD                     319440    96.7%
+OPEN_LONG                  5409     1.6%
+OPEN_SHORT                 3415     1.0%
+CLOSE_POSITION             2167     0.7%
+TOTAL                    330431   100.0%
+
+Blocked/Masked Actions              Count
+----------------------------------------
+Masked opens (budget)                   0
+Masked opens (cooldown)                 0
+Blocked reversals (min-hold)         6664
+Blocked manual closes (min-hold)       1762
+================================================================================
+
+================================================================================
+EXPERIMENT-012 DIAGNOSTICS - ATR FALLBACK + STOP-LOSS INTEGRITY
+================================================================================
+
+--- ATR Fallback Usage (Test 2025) ---
+Total bars processed: 345,971
+ATR fallback applied: 7 times
+Fallback rate: 0.002%
+
+--- Stop-Loss Integrity (Test 2025) ---
+Total stop_loss exits: 822
+Stop_loss exits with positive PnL: 0
+Integrity violation rate: 0.00%
+
+--- Exit Price Source Distribution (Test 2025) ---
+Source               Count
+-------------------------
+bar_close              828
+bar_open               357
+stop_price             822
+================================================================================
+
+================================================================================
+EXPERIMENT-013 DIAGNOSTICS - WEEKDAY PERFORMANCE & SESSION-FLAG SANITY
+================================================================================
+
+--- Test 2025 Weekday Performance ---
+Weekday      Days    Total PnL    Avg/Day       PF    Worst Day     Worst DD   Avg SL/Day
+--------------------------------------------------------------------------------------------------
+Monday         52 $     584.19 $    11.23     1.18 $    -252.20 $    -252.20         3.04
+Tuesday        52 $   -3024.55 $   -58.16     0.39 $    -235.50 $    -235.50         3.42
+Wednesday      52 $    1228.79 $    23.63     1.43 $    -244.00 $    -244.00         3.25
+Thursday       51 $     783.19 $    15.36     1.23 $    -219.53 $    -219.53         3.08
+Friday         52 $     654.35 $    12.58     1.23 $    -235.75 $    -244.88         3.08
+
+--- Session-Flag Sanity Check (Test 2025 Bars) ---
+Total bars: 345,971
+
+Session Flag              Bars > 0.5        %
+-------------------------------------------
+session_asia                  91,475    26.4%
+session_london               108,289    31.3%
+session_ny                   146,207    42.3%
+None > 0.5                         0     0.0%
+
+Overlap                         Bars        %
+-------------------------------------------
+Asia & London                      0     0.0%
+London & NY                        0     0.0%
+Asia & NY                          0     0.0%
+All 3                              0     0.0%
+
+--- Stop-Loss Cooldown Gate Summary (Test 2025) ---
+Days where cooldown triggered: 138 / 259
+Total masked opens (cooldown): 0
+Avg PnL on triggered days: $-99.06
+Avg stop-loss exits on triggered days: 4.00
+Avg PnL on non-triggered days: $114.85
+Avg stop-loss exits on non-triggered days: 2.23
+================================================================================
+
+================================================================================
+EXPERIMENT-014 DIAGNOSTICS — SESSION PARTICIPATION & CAP TIMING (TEST 2025)
+================================================================================
+
+--- A) Entries-by-Session Table (Test 2025) ---
+Source: trade_record['entry_session'] (set at open execution; accurate)
+
+Session     Entries   %Entries      PnL Sum    Avg PnL   SL Exits
+--------------------------------------------------------------
+Asia            761      37.9% $   -1717.01 $    -2.26        312
+London          698      34.8% $     741.77 $     1.06        282
+NY              548      27.3% $    1201.22 $     2.19        228
+TOTAL          2007     100.0%
+
+  Cross-check from env counters (entries_in_asia/london/ny):
+    Asia: 761, London: 698, NY: 548
+    London+NY combined: 1246 (62.1% of all entries)
+
+--- B) Cap Timing: When Is the 10th Entry Made? ---
+For days with >=10 entries, show bar_index of the 10th entry and which session it was in.
+
+  Days hitting 10-entry cap: 47
+
+Session of 10th Entry         Days        %
+-----------------------------------------
+Asia                             0     0.0%
+London                           0     0.0%
+NY                              47   100.0%
+Unknown                          0     0.0%
+
+  10th-entry bar index percentiles (cap-hit days):
+    p10: 832
+    p50: 863
+    p90: 913
+    mean: 871
+    (episode window_size offset = 59; total bars/day varies)
+
+--- C) Gating Effectiveness: Masked OPEN Attempts by Reason ---
+
+Mask Reason                           Attempts  Bars Active
+---------------------------------------------------------
+Budget cap (>=10 trades)                     0          N/A
+Session budget allocation                    0          N/A
+Soft SL gate (>=2 SL, <4 SL)                 0      140,864
+Hard SL gate (>=4 SL cooldown)               0       88,028
+
+  Session budget block triggered: 0 / 259 days
+  Total bars analyzed: 345,971
+  Bars with soft gate active: 140,864 (40.72%)
+  Bars with hard gate active: 88,028 (25.44%)
+================================================================================
+
+================================================================================
+EXPERIMENT-014 DIAGNOSTICS — SESSION PARTICIPATION (TRAIN 2021-2024, AGGREGATE)
+================================================================================
+
+  Session budget allocation constants:
+    RESERVED_ENTRIES_LONDON = 3
+    RESERVED_ENTRIES_NY = 4
+    Asia hard limit: 3 entries/day (before London/NY reached)
+    London hard limit: 6 entries/day (before NY reached)
+    NY limit: 10 entries/day (full cap)
+    Soft gate threshold: 2 SL exits (allow 1 entry/session)
+    Hard gate threshold: 4 SL exits (no new entries)
+
+  Train session diagnostics require storing env objects during training.
+  For full Train analysis, consider running a separate evaluation pass on Train dates.
+================================================================================
+
+================================================================================
+EXPERIMENT-015 DIAGNOSTICS - R DISTRIBUTION & GATE INTEGRITY
+================================================================================
+
+--- A) Test 2025 Realized R Distribution ---
+
+Bin                     Count        %
+------------------------------------
+  <= -1R                  407    20.3%
+  (-1R, -0.2R]            631    31.4%
+  (-0.2R, 0.2R)           233    11.6%
+  [0.2R, 1R)              364    18.1%
+  [1R, 2R)                255    12.7%
+  >= 2R                   117     5.8%
+  >= 3R                    45     2.2%
+
+  Total trades: 2007
+  Mean R: 0.002
+  Median R: -0.277
+
+--- B) Test 2025 Session × R Summary ---
+
+Session       Entries   Mean R    %>=2R    PnL Sum
+--------------------------------------------------
+  Asia            761   -0.045     5.3%   -1717.01
+  London          698    0.021     5.4%     741.77
+  NY              548    0.043     7.1%    1201.22
+  Unknown           0      N/A      N/A        N/A
+
+--- C) Test 2025 Gate Integrity Cross-Check ---
+
+  bars_cooloff_active (EXP-015):             10,800
+  masked_open_cooloff_attempts (EXP-015):         0
+  masked_open_hard_gate_attempts:                 0
+  bars_hard_gate_active:                     88,028
+  masked_open_budget_attempts:                    0
+  masked_open_session_budget:                     0
+  OPEN_LONG executed:                         5,409
+  OPEN_SHORT executed:                        3,415
+  Total OPEN attempts (exec+blocked):         8,824
+  stop_loss integrity violations:                 0  (expected: 0)
+================================================================================
+Model saved: models\final_agent.pt
+Metadata saved: models\final_agent_metadata.json
+
+================================================================================
+RESULTS PACKET
+================================================================================
+Experiment ID: EXPERIMENT-015
+Training timesteps completed: 326340
+Seeds: [not set]
+Eval protocol: Full-period daily episodes over Train and Test windows, deterministic argmax policy, epsilon=0
+
+Key metrics:
+
+Train:
+  Win rate: 43.56%
+  PnL: $7,721.87
+  Sharpe: 0.74
+  Profit factor: 1.13
+  Daily DD breaches: 0/1035 days
+  Monthly DD (from peak): $3,853.91
+  Max DD (single day intraday): $-280.11
+  Trades/day: 8.9
+
+Test:
+  Win rate: 40.01%
+  PnL: $225.98
+  Sharpe: 0.08
+  Profit factor: 1.01
+  Daily DD breaches: 0/259 days
+  Monthly DD (from peak): $2,959.17
+  Max DD (single day intraday): $-252.20
+  Trades/day: 7.7
+
+Best eval mean return: N/A (full-period evaluation)
+Last eval mean return: N/A (full-period evaluation)
+Eval success rate: N/A (full-period evaluation)
+Mean episode length (eval): 1035.0 bars/episode
+
+Stability notes: No issues observed
+
+Notes:
+  - Evaluation uses argmax policy
+  - Epsilon decay steps: 1,080,121
+  - Current epsilon: 0.01
+  - Buffer size: 250,000
+  - Env steps: 1,303,820
+  - Update steps: 326,340
+  - Reward config: MAX_TRADES_PER_DAY=10, MIN_TRADES_TARGET=5, EXECUTION_PENALTY_R=0.02, ACTION_PENALTY_R=0.01, STOPLOSS_EVENT_PENALTY_R=0.05
+  - Days hit trade cap: 646/1035 (Train), 47/259 (Test)
+================================================================================
+
